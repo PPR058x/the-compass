@@ -1,5 +1,7 @@
 # The Awakening Code
 
+Official website and creative platform for **The Compass**, featuring *The Awakening Code* and future music releases.
+
 **Artist:** Patrick Pascal Reerink
 **Genre:** Afrobeat
 **Release Date:** 2 August 2026
@@ -54,8 +56,10 @@ Marketing project workspace for the album *The Awakening Code*.
 
 ## Project Structure
 
+- `index.html`, `style.css`, `script.js` — the official Album Guide digital book (premium editorial web edition)
+- `standalone.html` — single-file, fully self-contained edition of the digital book
 - `BRAND_BIBLE.md` — visual identity, tone of voice, messaging, and thematic guidelines
-- `ALBUM.md` — album details, tracklist, credits
+- `ALBUM.md` — the Master Edition Album Guide source (narrative, philosophy, complete track guide, credits)
 - `RELEASE_PLAN.md` — phased release strategy and milestones
 - `CONTENT_CALENDAR.md` — scheduled content across channels
 - `Facebook/`, `Instagram/`, `TikTok/`, `YouTube/`, `Spotify/`, `Apple Music/` — platform-specific assets and copy
@@ -72,5 +76,6 @@ Marketing project workspace for the album *The Awakening Code*.
 - [x] Tracklist (21 titles confirmed)
 - [x] Content Calendar
 - [x] Platform content (social posts drafted across Facebook, Instagram, TikTok, YouTube, Spotify, Apple Music)
+- [x] Official Album Guide digital book (index.html + standalone.html)
 - [ ] Assets (final image/video production)
 - [ ] Credits, ISRC/UPC, and remaining Press placeholders
