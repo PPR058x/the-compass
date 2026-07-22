@@ -11,7 +11,7 @@
 ## 2. Editorial Follow-Up
 
 - Check in on the Phase 3 editorial submission status through Apple Music for Artists.
-- If editorial contact requests additional materials (album art variations, artist statement, high-res photography), fulfill using `../Press/ARTIST_STATEMENT.md` and assets from `../Assets/` — flag to Creative Director if anything is missing.
+- If editorial contact requests additional materials (album art variations, artist statement, high-res photography), fulfill using `../Press/ARTIST_STATEMENT.md` and assets from `../assets/` — flag to Creative Director if anything is missing.
 - No new pitch language needed this phase; reinforce the same full-album framing used in Phase 3 if a follow-up conversation occurs.
 
 ## 3. Profile Maintenance

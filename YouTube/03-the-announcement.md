@@ -66,7 +66,7 @@ The full reveal — album title, cover art, release date, the 21-track full-albu
 >
 > The World Is Changing...
 
-**Accompanying asset note:** Final album cover art [pull from Assets/ once finalized] + pre-save/pre-add links [add].
+**Accompanying asset note:** Final album cover art [pull from assets/ once finalized] + pre-save/pre-add links [add].
 
 ---
 

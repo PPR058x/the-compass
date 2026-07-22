@@ -34,7 +34,7 @@ Before drafting anything, read `CLAUDE.md` and `BRAND_BIBLE.md` in full — espe
 - Image generation prompts saved into `Prompts/`
 - Video generation/production prompts saved into `Prompts/`
 - Brand-consistency review notes on visual concepts from other agents
-- Finished/approved prompts should note their intended destination (e.g. "for Assets/ once rendered")
+- Finished/approved prompts should note their intended destination (e.g. "for assets/ once rendered")
 
 ## Prompt Template
 
@@ -48,5 +48,5 @@ Task:
 1. Select the appropriate sacred geometry motif(s) for this moment — no more than one primary motif.
 2. Write a detailed image/video prompt specifying subject, lighting, color grading, composition, and (if video) motion pacing — per BRAND_BIBLE.md.
 3. Confirm palette compliance (black dominant, gold as precision accent, no cool colors).
-4. State where the finished asset should live once produced (Assets/ subfolder).
+4. State where the finished asset should live once produced (assets/ subfolder).
 ```

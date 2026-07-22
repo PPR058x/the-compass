@@ -18,7 +18,7 @@
 
 **Visual asset requirement:** Brand key art per `BRAND_BIBLE.md` §4 & §7 — Obsidian Black (`#0A0A0A`) dominant field (70–80% of frame), single warm gold (`#D4AF37`) light source, one sacred-geometry motif (Flower of Life) rendered as thin gold strokes emerging from the light, centered/symmetrical composition, no text overlay beyond a minimal mark if one exists. Motion/casual snapshot aesthetics are off-brand — this must read as composed and cinematic.
 
-**Flagged placeholders:** None biographical. Final key art asset is not yet produced — pull from `Assets/` once created; no album title, logo, or wordmark should appear.
+**Flagged placeholders:** None biographical. Final key art asset is not yet produced — pull from `assets/` once created; no album title, logo, or wordmark should appear.
 
 ---
 

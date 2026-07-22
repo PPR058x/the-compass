@@ -138,7 +138,7 @@ Frequency ramps up steadily from silence → signal → daily presence at releas
 | 6. Release Week | Final album art (all platform formats), full press kit, release-day social asset set (all platforms), livestream/listening-event assets if applicable |
 | 7. Sustained Frequency | Lyric visual templates, behind-the-scenes/making-of footage, testimonial/reaction repost templates, focus-track spotlight asset set |
 
-All assets should be produced per `BRAND_BIBLE.md` (black-and-gold palette, sacred geometry motifs, cinematic imagery direction) and generated/drafted using prompt templates in `Prompts/`, with finals stored in `Assets/`.
+All assets should be produced per `BRAND_BIBLE.md` (black-and-gold palette, sacred geometry motifs, cinematic imagery direction) and generated/drafted using prompt templates in `Prompts/`, with finals stored in `assets/`.
 
 ---
 

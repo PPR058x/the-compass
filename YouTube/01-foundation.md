@@ -26,7 +26,7 @@ Seed the black-and-gold, sacred-geometry brand world on YouTube with zero direct
 
 **Poll options:** "The gold line." / "The dark around it." / "The space between."
 
-**Accompanying asset note:** Poll header image — single export frame from the sacred-geometry motion loop asset (concentric rings, thin gold stroke on black). No caption text baked into the image; poll copy carries the prompt. [Add exact motion loop asset filename once produced, per Assets/ folder.]
+**Accompanying asset note:** Poll header image — single export frame from the sacred-geometry motion loop asset (concentric rings, thin gold stroke on black). No caption text baked into the image; poll copy carries the prompt. [Add exact motion loop asset filename once produced, per assets/ folder.]
 
 ---
 

@@ -38,4 +38,4 @@ Black and gold · Sacred geometry · Frequency · Awakening · Transformation ·
 See `MEDIA_CONTACT.md`.
 
 ---
-*[Artist photo / key art to be attached separately — see `../Assets/`]*
+*[Artist photo / key art to be attached separately — see `../assets/`]*

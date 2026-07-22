@@ -65,7 +65,7 @@ Marketing project workspace for the album *The Awakening Code*.
 - `Facebook/`, `Instagram/`, `TikTok/`, `YouTube/`, `Spotify/`, `Apple Music/` — platform-specific assets and copy
 - `Press/` — press kit, bios, media outreach
 - `Prompts/` — AI generation prompts (image/video/audio) for brand-consistent content
-- `Assets/` — final exported creative assets
+- `assets/` — final exported creative assets
 
 ## Status
 
