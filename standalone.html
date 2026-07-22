@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Awakening Code — Official Album Guide</title>
+<meta name="description" content="The official companion guide to The Awakening Code, a 21-track conceptual journey by Patrick Pascal Reerink (PPR058x). Explore the narrative, philosophy, and complete track-by-track guide.">
+<meta name="author" content="Patrick Pascal Reerink">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   THE AWAKENING CODE — Premium Digital Book
+   Standalone Edition — all CSS embedded inline.
+   Deep Black / Ancient Gold / Warm Ivory — Luxury through restraint.
+   ========================================================================== */
+
+:root {
+  --color-bg: #090909;
+  --color-bg-raised: #0f0f0f;
+  --color-text: #F3F1EB;
+  --color-text-dim: #b9b6ac;
+  --color-gold: #C7A54B;
+  --color-gold-muted: #8F7A45;
+  --color-accent-line: rgba(199, 165, 75, 0.35);
+  --color-accent-line-soft: rgba(199, 165, 75, 0.15);
+
+  --font-heading: 'Cinzel', serif;
+  --font-subheading: 'Cormorant Garamond', serif;
+  --font-body: 'EB Garamond', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --measure: 850px;
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4.5rem;
+  --space-xl: 8rem;
+
+  --ease-quiet: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-slow: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --progress: 0%;
+}
+
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.85;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background-image: radial-gradient(rgba(199, 165, 75, 0.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+img, svg { max-width: 100%; display: block; }
+ul, ol { padding-left: 1.4em; }
+
+a {
+  color: var(--color-gold);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-accent-line);
+  transition: border-color 0.25s var(--ease-quiet), color 0.25s var(--ease-quiet);
+}
+a:hover { color: #ddbe6a; border-color: var(--color-gold); }
+
+::selection { background: var(--color-gold); color: #090909; }
+
+/* Accessible focus — visible for keyboard users, silent for mouse */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  position: fixed;
+  top: -60px;
+  left: 1rem;
+  z-index: 100;
+  background: var(--color-gold);
+  color: #090909;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 0.7em 1.2em;
+  border-radius: 3px;
+  transition: top 0.2s var(--ease-quiet);
+}
+.skip-link:focus { top: 1rem; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  margin: 0 0 var(--space-sm);
+}
+
+h1 { font-size: clamp(2rem, 5.5vw, 3.2rem); letter-spacing: 0.06em; }
+h2 { font-size: clamp(1.5rem, 3.6vw, 2.1rem); color: var(--color-gold); }
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  font-family: var(--font-subheading);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-text);
+}
+h4 {
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold-muted);
+  margin-top: var(--space-md);
+}
+
+p { margin: 0 0 1.3em; }
+p:last-child { margin-bottom: 0; }
+
+.subtitle {
+  font-family: var(--font-subheading);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--color-text-dim);
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-gold-muted);
+  margin-bottom: var(--space-sm);
+}
+
+/* Drop caps — the opening paragraph of each major chapter */
+.lede::first-letter {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 3.2em;
+  line-height: 0.72;
+  float: left;
+  padding: 0.06em 0.09em 0 0;
+  color: var(--color-gold);
+}
+
+/* Pull quotes — statement-mode typographic peaks */
+.pull-quote-wrap {
+  max-width: 760px;
+  margin: var(--space-lg) auto;
+  text-align: center;
+  padding: 0 var(--gutter);
+}
+
+.pq-mark {
+  display: block;
+  width: 7px;
+  height: 7px;
+  margin: 0 auto var(--space-md);
+  background: var(--color-gold);
+  transform: rotate(45deg);
+  opacity: 0.85;
+}
+
+.pull-quote {
+  font-family: var(--font-subheading);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 4.4vw, 2.5rem);
+  line-height: 1.4;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.pull-quote.is-gold { color: var(--color-gold); }
+
+/* Quiet inline theme list (replaces prior "pill" chips) */
+.theme-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.6em 0 0;
+  font-family: var(--font-subheading);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--color-text-dim);
+}
+.theme-list li { display: inline; }
+.theme-list li:not(:last-child)::after {
+  content: "\00B7";
+  margin: 0 0.55em;
+  color: var(--color-gold-muted);
+  font-style: normal;
+}
+
+/* Index-mode numbered list (Recurring Themes / Glossary / Sources) */
+.index-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-md) 0 0;
+  border-top: 1px solid var(--color-accent-line-soft);
+}
+.index-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2em;
+  padding: 0.95em 0;
+  border-bottom: 1px solid var(--color-accent-line-soft);
+  font-family: var(--font-subheading);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+}
+.idx-num {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--color-gold-muted);
+  min-width: 2.2em;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.container { max-width: var(--measure); margin: 0 auto; padding: 0 var(--gutter); }
+main { position: relative; z-index: 1; }
+
+section {
+  padding: var(--space-xl) 0;
+  border-bottom: 1px solid var(--color-accent-line-soft);
+  position: relative;
+}
+section:last-of-type { border-bottom: none; }
+.section-inner { max-width: var(--measure); margin: 0 auto; padding: 0 var(--gutter); position: relative; z-index: 1; }
+
+/* Full-height cinematic sections */
+.cinematic {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: none;
+  position: relative;
+  overflow: hidden;
+}
+.cinematic::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-image, none);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+  z-index: -1;
+}
+.cinematic .container { position: relative; z-index: 1; }
+
+/* ==========================================================================
+   Decorative elements
+   ========================================================================== */
+
+.divider {
+  width: 90px;
+  height: 1px;
+  margin: var(--space-md) auto;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+.divider--left { margin-left: 0; }
+
+.roman {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 12vw, 7rem);
+  color: var(--color-gold);
+  letter-spacing: 0.1em;
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+  opacity: 0.9;
+}
+
+.constellation {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.55;
+  background-repeat: no-repeat;
+  background-image:
+    radial-gradient(1px 1px at 12% 20%, var(--color-gold) 0, transparent 60%),
+    radial-gradient(1px 1px at 78% 15%, var(--color-gold) 0, transparent 60%),
+    radial-gradient(1.5px 1.5px at 33% 62%, var(--color-gold) 0, transparent 60%),
+    radial-gradient(1px 1px at 60% 78%, var(--color-gold) 0, transparent 60%),
+    radial-gradient(1px 1px at 90% 55%, var(--color-gold) 0, transparent 60%),
+    radial-gradient(1.5px 1.5px at 20% 85%, var(--color-gold) 0, transparent 60%),
+    radial-gradient(1px 1px at 50% 10%, var(--color-gold) 0, transparent 60%);
+}
+
+/* Ghost type — oversized background numerals/words, decoration only */
+.ghost {
+  position: absolute;
+  z-index: 0;
+  font-family: var(--font-heading);
+  color: var(--color-gold);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.ghost-num {
+  top: -0.15em;
+  right: -0.02em;
+  font-size: clamp(6rem, 20vw, 13rem);
+  opacity: 0.045;
+}
+.ghost-roman {
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(10rem, 38vw, 26rem);
+  opacity: var(--ghost-opacity, 0.04);
+}
+
+/* ==========================================================================
+   Cover
+   ========================================================================== */
+
+.cover-art {
+  position: relative;
+  width: min(280px, 60vw);
+  aspect-ratio: 1 / 1;
+  margin: 0 auto var(--space-md);
+  border: 1px solid var(--color-accent-line);
+}
+.cover-art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cover-fallback {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 1.5rem;
+  background: linear-gradient(160deg, #111 0%, #090909 100%);
+  text-align: center;
+}
+.cover-fallback .cf-title { font-family: var(--font-heading); font-size: 1rem; letter-spacing: 0.18em; color: var(--color-gold); }
+.cover-fallback .cf-artist { font-family: var(--font-subheading); font-style: italic; font-size: 0.9rem; color: var(--color-text-dim); margin-top: 0.6em; }
+
+.wordmark { position: relative; display: inline-block; height: 34px; }
+.wordmark img { height: 100%; width: auto; }
+.wordmark .wm-fallback { font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.22em; color: var(--color-gold-muted); line-height: 34px; }
+
+.meta-lines { font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-text-dim); letter-spacing: 0.04em; margin-top: var(--space-md); }
+.meta-lines span { display: block; margin: 0.2em 0; }
+
+.scroll-cue {
+  position: absolute;
+  bottom: 2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold-muted);
+  opacity: 0.7;
+}
+.scroll-cue::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 34px;
+  margin: 0.7em auto 0;
+  background: linear-gradient(var(--color-gold), transparent);
+}
+
+/* ==========================================================================
+   Table of contents
+   ========================================================================== */
+
+.toc-list { list-style: none; padding: 0; margin: var(--space-md) 0 0; }
+.toc-list li { border-bottom: 1px solid var(--color-accent-line-soft); }
+.toc-list li:first-child { border-top: 1px solid var(--color-accent-line-soft); }
+
+.toc-list a {
+  border-bottom: none;
+  display: flex;
+  align-items: baseline;
+  gap: 1.1em;
+  padding: 0.85em 0;
+  font-family: var(--font-subheading);
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+  color: var(--color-text);
+}
+.toc-list a:hover { color: var(--color-gold); }
+.toc-list a:hover .toc-num { opacity: 1; }
+
+.toc-num {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-gold);
+  opacity: 0.5;
+  min-width: 2em;
+  transition: opacity 0.25s var(--ease-quiet);
+}
+
+/* Floating sticky TOC */
+.toc-toggle {
+  position: fixed; left: 1.25rem; bottom: 1.25rem; z-index: 50;
+  width: 46px; height: 46px; border-radius: 50%;
+  border: 1px solid var(--color-accent-line);
+  background: rgba(9, 9, 9, 0.85);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: var(--color-gold);
+  font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.05em;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.25s var(--ease-quiet), border-color 0.25s var(--ease-quiet);
+}
+.toc-toggle:hover { border-color: var(--color-gold); transform: translateY(-2px); }
+
+.toc-panel {
+  position: fixed; inset: 0; z-index: 49;
+  background: rgba(5, 5, 5, 0.94);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s var(--ease-quiet), visibility 0.3s var(--ease-quiet);
+  padding: var(--gutter);
+}
+.toc-panel.is-open { opacity: 1; visibility: visible; }
+.toc-panel-inner { max-height: 85vh; overflow-y: auto; max-width: 560px; width: 100%; }
+.toc-panel h2 { text-align: center; margin-bottom: var(--space-sm); }
+.toc-close {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  background: none; border: 1px solid var(--color-accent-line); color: var(--color-gold);
+  width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-family: var(--font-mono);
+}
+.toc-close:hover { border-color: var(--color-gold); }
+
+/* ==========================================================================
+   Reading progress + back to top
+   ========================================================================== */
+
+.progress-bar {
+  position: fixed; top: 0; left: 0; height: 2px; width: var(--progress);
+  background: linear-gradient(90deg, var(--color-gold-muted), var(--color-gold));
+  z-index: 60;
+  transition: width 0.1s linear;
+}
+
+.back-to-top {
+  position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 50;
+  width: 46px; height: 46px; border-radius: 50%;
+  border: 1px solid var(--color-accent-line);
+  background: rgba(9, 9, 9, 0.85);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: var(--color-gold);
+  cursor: pointer;
+  opacity: 0; visibility: hidden; transform: translateY(10px);
+  transition: opacity 0.3s var(--ease-quiet), transform 0.3s var(--ease-quiet), border-color 0.25s var(--ease-quiet);
+  font-size: 1.1rem;
+}
+.back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { border-color: var(--color-gold); }
+
+/* ==========================================================================
+   Act divider pages (within Complete Track Guide) — escalating intensity
+   ========================================================================== */
+
+.act-divider .eyebrow { letter-spacing: 0.32em; }
+.act-divider h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); }
+.act-divider .act-intro {
+  max-width: 640px;
+  margin: var(--space-md) auto 0;
+  font-family: var(--font-subheading);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--color-text-dim);
+}
+.act-divider--1 { --ghost-opacity: 0.03; }
+.act-divider--2 { --ghost-opacity: 0.045; }
+.act-divider--3 { --ghost-opacity: 0.06; }
+.act-divider--4 { --ghost-opacity: 0.08; }
+.act-divider--3::after,
+.act-divider--4::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 45%, rgba(199,165,75,0.08), transparent 60%);
+  z-index: -1;
+}
+
+/* ==========================================================================
+   The Four Acts — sticky pinned sequence
+   ========================================================================== */
+
+.acts-stack { position: relative; }
+
+.act-stage {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-accent-line-soft);
+  overflow: hidden;
+}
+
+.act-stage .container { position: relative; z-index: 1; max-width: 640px; }
+
+.act-stage-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: var(--color-gold-muted);
+  text-transform: uppercase;
+}
+
+.act-stage h3 {
+  font-family: var(--font-heading);
+  font-style: normal;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: var(--color-gold);
+  margin: 0.4em 0 var(--space-md);
+}
+
+.act-stage p { font-family: var(--font-subheading); font-style: italic; font-size: clamp(1.15rem, 2.8vw, 1.5rem); color: var(--color-text-dim); margin: 0.3em 0; }
+
+/* ==========================================================================
+   Track chapters — editorial spreads
+   ========================================================================== */
+
+.track {
+  padding: var(--space-xl) 0;
+  border-top: 1px solid var(--color-accent-line-soft);
+  position: relative;
+  overflow: hidden;
+}
+.track:first-of-type { border-top: none; }
+.track > .container { position: relative; z-index: 1; }
+
+.track-number {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.24em;
+  color: var(--color-gold-muted);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.track h3.track-title {
+  font-family: var(--font-heading);
+  font-style: normal;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: var(--color-text);
+  margin-top: 0.3em;
+  position: relative;
+  z-index: 1;
+}
+
+.act-summary {
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  border: 1px solid var(--color-accent-line-soft);
+  background: rgba(199, 165, 75, 0.03);
+  text-align: center;
+}
+.act-summary h4 { margin-top: 0; }
+
+/* ==========================================================================
+   Credits
+   ========================================================================== */
+
+.credit-group h3 { margin-top: var(--space-md); }
+.credit-group dl { margin: 0.5em 0 0; }
+.credit-group dt { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.05em; color: var(--color-text-dim); margin-top: 0.6em; }
+.credit-group dd { margin: 0.1em 0 0; font-family: var(--font-subheading); font-size: 1.1rem; }
+
+/* ==========================================================================
+   Closing Manifesto — distinct treatment (not the Cover template)
+   ========================================================================== */
+
+.manifesto {
+  min-height: 100vh; min-height: 100svh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-xl) 0;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(199,165,75,0.09), transparent 65%),
+    var(--color-bg);
+}
+.manifesto .container { max-width: 700px; }
+.manifesto .eyebrow { letter-spacing: 0.4em; }
+.manifesto h1 {
+  font-size: clamp(2.4rem, 7vw, 4.2rem);
+  color: var(--color-gold);
+}
+.manifesto-lines p {
+  font-family: var(--font-subheading);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.6vw, 1.5rem);
+  color: var(--color-text-dim);
+  margin: 0 0 1.5em;
+}
+.manifesto-lines p:last-child { color: var(--color-gold); }
+.manifesto .sign-off {
+  margin-top: var(--space-lg);
+  font-family: var(--font-heading);
+  letter-spacing: 0.14em;
+  color: var(--color-gold);
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   Header / footer
+   ========================================================================== */
+
+.site-footer {
+  text-align: center;
+  padding: var(--space-lg) var(--gutter);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-dim);
+}
+
+/* ==========================================================================
+   Motion — two distinct reveal rhythms
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.7s var(--ease-quiet), transform 0.7s var(--ease-quiet);
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+.reveal-slow {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1.4s var(--ease-slow), transform 1.4s var(--ease-slow);
+}
+.reveal-slow.is-visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .reveal-slow { opacity: 1; transform: none; transition: none; }
+  .act-stage { position: static; }
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  section { padding: var(--space-lg) 0; }
+  .ghost-num { font-size: clamp(4.5rem, 26vw, 8rem); opacity: 0.035; }
+  .act-stage { padding: var(--gutter); }
+  .toc-list a { font-size: 1.05rem; }
+}
+
+@media (max-width: 480px) {
+  .ghost-num { display: none; }
+}
+
+/* ==========================================================================
+   Print
+   ========================================================================== */
+
+@page { size: A4; margin: 2cm; }
+
+@media print {
+  .toc-toggle, .toc-panel, .back-to-top, .progress-bar, .skip-link, .scroll-cue { display: none !important; }
+
+  html, body { background: #ffffff !important; color: #111111 !important; font-size: 11pt; }
+  body { background-image: none !important; }
+  a { color: #111111 !important; border-bottom: none !important; }
+  h1, h2, h3, h4 { color: #111111 !important; }
+
+  .cinematic, .manifesto, .act-stage { min-height: 90vh; }
+  .constellation, .cinematic::before, .ghost, .manifesto { background: none !important; }
+  .ghost { display: none !important; }
+
+  .acts-stack .act-stage { position: static !important; }
+
+  section, .track, .act-divider { break-inside: avoid-page; }
+  section { break-before: page; border-bottom: none; }
+  section:first-of-type { break-before: avoid; }
+  h1, h2, h3, h4 { break-after: avoid; break-inside: avoid; }
+
+  .index-list li, .theme-list li { border-color: #999 !important; color: #111 !important; }
+  .act-summary { border-color: #999 !important; background: none !important; }
+  .pull-quote, .pull-quote.is-gold { color: #111 !important; }
+  .reveal, .reveal-slow { opacity: 1 !important; transform: none !important; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="progress-bar" aria-hidden="true"></div>
+
+<button class="toc-toggle" aria-haspopup="dialog" aria-controls="toc-panel">
+  <span aria-hidden="true">☰<br>TOC</span>
+  <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Open table of contents</span>
+</button>
+
+<div class="toc-panel" id="toc-panel" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Table of contents">
+  <button class="toc-close" aria-label="Close table of contents">✕</button>
+  <div class="toc-panel-inner">
+    <h2>Table of Contents</h2>
+    <nav aria-label="Table of contents">
+    <ul class="toc-list">
+      <li><a href="#cinematic-opening"><span class="toc-num">I</span> Cinematic Opening Spread</a></li>
+      <li><a href="#about-this-guide"><span class="toc-num">II</span> About This Guide</a></li>
+      <li><a href="#welcome"><span class="toc-num">III</span> Welcome</a></li>
+      <li><a href="#why-i-created-this-album"><span class="toc-num">IV</span> Why I Created This Album</a></li>
+      <li><a href="#what-is-the-awakening-code"><span class="toc-num">V</span> What Is The Awakening Code?</a></li>
+      <li><a href="#album-philosophy"><span class="toc-num">VI</span> Album Philosophy</a></li>
+      <li><a href="#the-journey"><span class="toc-num">VII</span> The Journey</a></li>
+      <li><a href="#the-four-acts"><span class="toc-num">VIII</span> The Four Acts</a></li>
+      <li><a href="#complete-track-guide"><span class="toc-num">IX</span> Complete Track Guide</a></li>
+      <li><a href="#recurring-themes"><span class="toc-num">X</span> Recurring Themes</a></li>
+      <li><a href="#glossary"><span class="toc-num">XI</span> Glossary</a></li>
+      <li><a href="#sources-of-inspiration"><span class="toc-num">XII</span> Sources of Inspiration</a></li>
+      <li><a href="#acknowledgements"><span class="toc-num">XIII</span> Acknowledgements</a></li>
+      <li><a href="#album-credits"><span class="toc-num">XIV</span> Album Credits</a></li>
+      <li><a href="#closing-manifesto"><span class="toc-num">XV</span> Closing Manifesto</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+
+<button class="back-to-top" aria-label="Back to top">↑</button>
+
+<main id="main">
+
+  <!-- ================= COVER ================= -->
+  <section class="cinematic" id="cover">
+    <div class="constellation" aria-hidden="true"></div>
+    <div class="container reveal-slow">
+      <div class="cover-art">
+        <div class="cover-fallback">
+          <span class="cf-title">THE AWAKENING CODE</span>
+          <span class="cf-artist">Patrick Pascal Reerink</span>
+        </div>
+      </div>
+      <span class="wordmark">
+        <span class="wm-fallback" style="display:inline-block;">PPR058x</span>
+      </span>
+      <h1>THE AWAKENING CODE</h1>
+      <p class="subtitle">Official Album Guide</p>
+      <div class="divider" role="separator"></div>
+      <p class="meta-lines">
+        <span>Artist: Patrick Pascal Reerink (PPR058x)</span>
+        <span>Release Date: 02 • 08 • 2026</span>
+        <span>Version: Master Edition 1.0</span>
+      </p>
+    </div>
+    <span class="scroll-cue" aria-hidden="true">Scroll</span>
+  </section>
+
+  <!-- ================= CINEMATIC OPENING SPREAD ================= -->
+  <section class="cinematic" id="cinematic-opening">
+    <div class="constellation" aria-hidden="true"></div>
+    <div class="container reveal-slow">
+      <span class="eyebrow">❯ Cinematic Opening Spread</span>
+      <h1>Before the First Note</h1>
+      <div class="divider"></div>
+      <div style="font-family:var(--font-subheading); font-style:italic; font-size:1.3rem; color:var(--color-text-dim); line-height: 2.1;">
+        <p>Every journey begins long before the first step is taken.</p>
+        <p>Before there is understanding... there is curiosity.</p>
+        <p>Before there is certainty... there is wonder.</p>
+        <p>Some questions cannot be answered by others. They can only be experienced.</p>
+        <p>This album is not a destination. It is an invitation.</p>
+        <p>An invitation to observe more carefully. To listen more deeply. To question more honestly. To imagine more freely.</p>
+        <p>Whatever this journey awakens within you... allow it to be your own.</p>
+        <p>Take a deep breath. Leave certainty behind.</p>
+        <p style="color: var(--color-gold);">The story begins now.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TABLE OF CONTENTS ================= -->
+  <section id="toc">
+    <div class="section-inner reveal">
+      <h2>Table of Contents</h2>
+      <div class="divider divider--left"></div>
+      <nav aria-label="Table of contents">
+      <ul class="toc-list">
+        <li><a href="#cinematic-opening"><span class="toc-num">I</span> Cinematic Opening Spread</a></li>
+        <li><a href="#about-this-guide"><span class="toc-num">II</span> About This Guide</a></li>
+        <li><a href="#welcome"><span class="toc-num">III</span> Welcome</a></li>
+        <li><a href="#why-i-created-this-album"><span class="toc-num">IV</span> Why I Created This Album</a></li>
+        <li><a href="#what-is-the-awakening-code"><span class="toc-num">V</span> What Is The Awakening Code?</a></li>
+        <li><a href="#album-philosophy"><span class="toc-num">VI</span> Album Philosophy</a></li>
+        <li><a href="#the-journey"><span class="toc-num">VII</span> The Journey</a></li>
+        <li><a href="#the-four-acts"><span class="toc-num">VIII</span> The Four Acts</a></li>
+        <li><a href="#complete-track-guide"><span class="toc-num">IX</span> Complete Track Guide</a></li>
+        <li><a href="#recurring-themes"><span class="toc-num">X</span> Recurring Themes</a></li>
+        <li><a href="#glossary"><span class="toc-num">XI</span> Glossary</a></li>
+        <li><a href="#sources-of-inspiration"><span class="toc-num">XII</span> Sources of Inspiration</a></li>
+        <li><a href="#acknowledgements"><span class="toc-num">XIII</span> Acknowledgements</a></li>
+        <li><a href="#album-credits"><span class="toc-num">XIV</span> Album Credits</a></li>
+        <li><a href="#closing-manifesto"><span class="toc-num">XV</span> Closing Manifesto</a></li>
+      </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT THIS GUIDE ================= -->
+  <section id="about-this-guide">
+    <div class="section-inner reveal">
+      <h2>About This Guide</h2>
+      <div class="divider divider--left"></div>
+      <p class="lede">This document is the official companion to The Awakening Code.</p>
+      <p>It serves as the definitive reference for the album's narrative, philosophy, themes, and artistic intent. Every future description, interview, booklet, website, social media post, press release, or promotional publication related to this project should remain consistent with the principles described here.</p>
+      <p>Rather than explaining every lyric literally, this guide explores the broader ideas and journey that connect all twenty-one tracks into a single conceptual work.</p>
+      <p>The purpose of this guide is not to tell listeners what they must believe, but to provide context for the worldview presented throughout the album while leaving space for personal reflection and interpretation.</p>
+    </div>
+  </section>
+
+  <!-- ================= WELCOME ================= -->
+  <section id="welcome">
+    <div class="section-inner reveal">
+      <h2>Welcome</h2>
+      <div class="divider divider--left"></div>
+      <p class="lede">Welcome to The Awakening Code.</p>
+      <p>This album is an invitation.</p>
+      <p>An invitation to pause.<br>To listen.<br>To reflect.<br>And to remain curious.</p>
+      <p>Across twenty-one tracks, The Awakening Code explores themes of hope, inner strength, awareness, resilience, and personal growth. Every song tells its own story, yet together they form a larger journey that unfolds from beginning to end.</p>
+      <p>This is not an album that asks you to accept a particular worldview. Instead, it encourages you to think for yourself, to ask questions, and to discover your own meaning through the music.</p>
+      <p>Every listener brings a different life experience, and therefore every listener may discover a different meaning within these songs.</p>
+      <p>That is exactly as it was intended.</p>
+      <p>The journey begins the moment you choose to listen.</p>
+    </div>
+  </section>
+
+  <!-- ================= WHY I CREATED THIS ALBUM ================= -->
+  <section id="why-i-created-this-album">
+    <div class="section-inner reveal">
+      <h2>Why I Created This Album</h2>
+      <div class="divider divider--left"></div>
+      <p class="lede">I created The Awakening Code with the hope of reaching people who are searching for hope, inner strength, and greater awareness.</p>
+      <p>Throughout life, we all face moments of uncertainty, change, loss, discovery, and transformation. Music has always been one of the most powerful ways to connect with those experiences because it speaks not only to the mind, but also to the heart.</p>
+      <p>My intention was never to tell people what to believe.</p>
+      <p>My intention was to create music that inspires curiosity, reflection, meaningful conversations, and the courage to keep growing.</p>
+      <p>If this album helps even one person find hope during a difficult time, discover strength they didn't know they possessed, or see life from a new perspective, then it has fulfilled its purpose.</p>
+      <p>This album is not about having all the answers.</p>
+      <p>It is about never losing the courage to keep asking meaningful questions.</p>
+    </div>
+  </section>
+
+  <!-- ================= WHAT IS THE AWAKENING CODE ================= -->
+  <section id="what-is-the-awakening-code">
+    <div class="section-inner reveal">
+      <h2>What Is The Awakening Code?</h2>
+      <div class="divider divider--left"></div>
+      <p class="lede">The Awakening Code is a conceptual journey told across twenty-one interconnected tracks.</p>
+      <p>Each song represents one piece of a much larger story. Together they form a narrative that explores awakening, transformation, remembrance, compassion, and hope.</p>
+      <p>The album does not ask listeners to accept a single interpretation. Instead, every listener is invited to discover their own meaning within the music.</p>
+      <p>Some may experience the journey as spiritual.</p>
+      <p>Others may hear it as philosophy.</p>
+      <p>Some may simply enjoy the music itself.</p>
+      <p>All interpretations are welcome.</p>
+    </div>
+    <div class="pull-quote-wrap reveal-slow">
+      <span class="pq-mark" aria-hidden="true"></span>
+      <p class="pull-quote">The Awakening Code is ultimately an invitation to explore—not a conclusion to accept.</p>
+    </div>
+  </section>
+
+  <!-- ================= ALBUM PHILOSOPHY ================= -->
+  <section id="album-philosophy">
+    <div class="section-inner reveal">
+      <h2>Album Philosophy</h2>
+      <div class="divider divider--left"></div>
+      <p class="lede">Every generation asks its own questions.</p>
+      <p>Who are we?</p>
+      <p>Where do we come from?</p>
+      <p>What gives life meaning?</p>
+      <p>And what kind of future are we creating together?</p>
+      <p>The Awakening Code was created from the belief that these questions are worth exploring—not because there is one final answer, but because the search itself has the power to transform us.</p>
+    </div>
+
+    <div class="pull-quote-wrap reveal-slow">
+      <span class="pq-mark" aria-hidden="true"></span>
+      <p class="pull-quote">The album is built around a simple idea: awareness begins with curiosity.</p>
+    </div>
+
+    <div class="section-inner reveal">
+      <p>It does not ask listeners to accept a particular worldview or to follow a predetermined path. Instead, it invites each person to observe, reflect, and discover meaning through their own experiences.</p>
+      <p>Throughout the album, recurring themes such as awakening, unity, consciousness, hope, transformation, and personal responsibility appear from different perspectives. Some songs encourage stillness. Others inspire courage. Some explore mystery, while others focus on compassion and the strength found in human connection.</p>
+      <p>The title, The Awakening Code, is symbolic.</p>
+      <p>A code is often understood as something hidden that must be solved. This album approaches the idea differently. The code is not a secret message concealed by the artist. It is a pattern that gradually reveals itself through listening, reflection, and lived experience.</p>
+      <p>Each track represents one piece of a larger journey. Individually, every song tells its own story. Together, they form a narrative that grows with every chapter, inviting listeners to make connections that are personal rather than universal.</p>
+      <p>Knowledge opens the first door.</p>
+      <p>Awareness opens the next.</p>
+    </div>
+
+    <div class="pull-quote-wrap reveal-slow">
+      <span class="pq-mark" aria-hidden="true"></span>
+      <p class="pull-quote">Understanding is never imposed—it is discovered.</p>
+    </div>
+
+    <div class="section-inner reveal">
+      <p>For one listener, the album may be an exploration of philosophy. For another, it may be a story of personal growth, resilience, or hope. Someone else may simply enjoy the music as a cinematic journey filled with symbolism and imagination.</p>
+      <p>All of these experiences are equally valid.</p>
+      <p>At its core, The Awakening Code is not about certainty.</p>
+      <p>It is about remaining open to possibility.</p>
+      <p>Choosing curiosity over assumption.</p>
+      <p>Compassion over division.</p>
+      <p>Hope over fear.</p>
+      <p>The journey does not end with the final track.</p>
+      <p>If anything, it begins there.</p>
+      <p>Because the final code is not found within the album.</p>
+    </div>
+
+    <div class="pull-quote-wrap reveal-slow">
+      <span class="pq-mark" aria-hidden="true"></span>
+      <p class="pull-quote is-gold">It is discovered within yourself.</p>
+    </div>
+  </section>
+
+  <!-- ================= THE JOURNEY ================= -->
+  <section id="the-journey">
+    <div class="section-inner reveal">
+      <h2>The Journey</h2>
+      <div class="divider divider--left"></div>
+      <p class="lede">Every meaningful journey begins with a moment of curiosity.</p>
+      <p>The Awakening Code follows that journey through four connected acts. Together, they form the complete narrative of the album. Each act represents a different stage of reflection, discovery, and personal growth.</p>
+      <p>Although every track can stand on its own, the album was intentionally arranged to create a continuous listening experience from beginning to end.</p>
+    </div>
+  </section>
+
+  <!-- ================= THE FOUR ACTS — sticky pinned sequence ================= -->
+  <section id="the-four-acts" style="padding:0; border-bottom:none;">
+    <div class="section-inner reveal" style="padding-top: var(--space-xl);">
+      <h2>The Four Acts</h2>
+      <div class="divider divider--left"></div>
+    </div>
+
+    <div class="acts-stack">
+      <div class="act-stage">
+        <span class="ghost ghost-roman" aria-hidden="true" style="--ghost-opacity:0.05;">I</span>
+        <div class="container">
+          <span class="act-stage-num">Act One</span>
+          <h3>The Call</h3>
+          <p>The first signals.</p>
+          <p>Curiosity begins.</p>
+          <p>Patterns start to emerge.</p>
+          <p>The journey has begun.</p>
+        </div>
+      </div>
+      <div class="act-stage">
+        <span class="ghost ghost-roman" aria-hidden="true" style="--ghost-opacity:0.055;">II</span>
+        <div class="container">
+          <span class="act-stage-num">Act Two</span>
+          <h3>The Awakening</h3>
+          <p>Questions replace certainty.</p>
+          <p>Awareness begins to grow.</p>
+          <p>A new perspective starts to unfold.</p>
+        </div>
+      </div>
+      <div class="act-stage">
+        <span class="ghost ghost-roman" aria-hidden="true" style="--ghost-opacity:0.065;">III</span>
+        <div class="container">
+          <span class="act-stage-num">Act Three</span>
+          <h3>The Revelation</h3>
+          <p>Hidden connections become visible.</p>
+          <p>Understanding deepens.</p>
+          <p>A larger picture begins to take shape.</p>
+        </div>
+      </div>
+      <div class="act-stage">
+        <span class="ghost ghost-roman" aria-hidden="true" style="--ghost-opacity:0.08;">IV</span>
+        <div class="container">
+          <span class="act-stage-num">Act Four</span>
+          <h3>The Transformation</h3>
+          <p>Awakening is not the destination.</p>
+          <p>It is the beginning of a new way of living.</p>
+          <p>The journey truly starts now.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMPLETE TRACK GUIDE ================= -->
+  <section id="complete-track-guide" style="padding-bottom:0; border-bottom:none;">
+    <div class="section-inner reveal">
+      <h2>Complete Track Guide</h2>
+      <div class="divider divider--left"></div>
+    </div>
+  </section>
+
+  <!-- ---------- ACT I DIVIDER ---------- -->
+  <section class="cinematic act-divider act-divider--1" id="act-i">
+    <span class="ghost ghost-roman" aria-hidden="true">I</span>
+    <div class="constellation" aria-hidden="true"></div>
+    <div class="container reveal-slow">
+      <span class="eyebrow">Complete Track Guide</span>
+      <h1>The Call</h1>
+      <div class="divider"></div>
+      <p class="act-intro">The first act marks the beginning of the journey. It is the moment when curiosity awakens and familiar patterns begin to shift. Rather than providing answers, these opening songs encourage the listener to notice, reflect, and remain open to new possibilities.</p>
+    </div>
+  </section>
+
+  <section id="act-i-tracks">
+    <div class="section-inner">
+
+      <article class="track reveal" id="track-1">
+        <span class="ghost ghost-num" aria-hidden="true">01</span>
+        <div class="container">
+        <p class="track-number">Track 1</p>
+        <h3 class="track-title">Prologue: The Awakening Begins</h3>
+        <h4>Overview</h4>
+        <p>The album opens with an invitation rather than a conclusion. The Prologue introduces the atmosphere of mystery, reflection, and curiosity that defines the entire journey.</p>
+        <h4>Role Within the Album</h4>
+        <p>This track serves as the gateway into The Awakening Code. It prepares the listener to leave certainty behind and enter the unknown with an open mind.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">Every journey begins with a single question.</p>
+        </div>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Curiosity</li><li>Awareness</li><li>Reflection</li><li>Presence</li><li>New Beginnings</li></ul>
+        <h4>Connection to the Next Track</h4>
+        <p>The invitation to begin naturally leads into the first sign that something larger may be unfolding: <strong>11:11 (Open the Gate).</strong></p>
+        <h4>Reflection</h4>
+        <p>The Prologue asks only one thing of the listener: remain open.</p>
+        </div>
+      </article>
+
+      <article class="track reveal" id="track-2">
+        <span class="ghost ghost-num" aria-hidden="true">02</span>
+        <div class="container">
+        <p class="track-number">Track 2</p>
+        <h3 class="track-title">11:11 (Open the Gate)</h3>
+        <h4>Overview</h4>
+        <p>The appearance of repeating numbers becomes the symbolic starting point of the awakening journey. Whether understood spiritually, psychologically, or simply as coincidence, the experience encourages greater awareness of the present moment.</p>
+        <h4>Role Within the Album</h4>
+        <p>This track represents the first conscious step beyond ordinary perception. Curiosity becomes intention.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">Sometimes a simple moment is enough to inspire an entirely new way of looking at life.</p>
+        </div>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Awareness</li><li>Hope</li><li>Intuition</li><li>Courage</li><li>Transformation</li><li>Trust</li><li>Growth</li></ul>
+        <h4>Connection to the Next Track</h4>
+        <p>After noticing the first sign, the listener begins recognizing that the experience may not be isolated. This leads naturally into <strong>The Numbers Keep Calling.</strong></p>
+        <h4>Reflection</h4>
+        <p>Meaning often begins where curiosity refuses to stop asking questions.</p>
+        </div>
+      </article>
+
+      <article class="track reveal" id="track-3">
+        <span class="ghost ghost-num" aria-hidden="true">03</span>
+        <div class="container">
+        <p class="track-number">Track 3</p>
+        <h3 class="track-title">The Numbers Keep Calling</h3>
+        <h4>Overview</h4>
+        <p>Patterns begin appearing more frequently, inviting deeper reflection. The song explores the experience of repeatedly encountering meaningful moments and wondering whether they carry personal significance.</p>
+        <h4>Role Within the Album</h4>
+        <p>The listener moves from noticing isolated events toward recognizing recurring patterns.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">Awareness grows through observation rather than certainty.</p>
+        </div>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Reflection</li><li>Meaning</li><li>Curiosity</li><li>Hope</li><li>Intuition</li></ul>
+        <h4>Connection to the Next Track</h4>
+        <p>As patterns become increasingly meaningful, the journey becomes active rather than observational, leading into <strong>Frequency Walker.</strong></p>
+        <h4>Reflection</h4>
+        <p>Sometimes the value of a question is greater than the certainty of an answer.</p>
+        </div>
+      </article>
+
+      <article class="track reveal" id="track-4">
+        <span class="ghost ghost-num" aria-hidden="true">04</span>
+        <div class="container">
+        <p class="track-number">Track 4</p>
+        <h3 class="track-title">Frequency Walker</h3>
+        <h4>Overview</h4>
+        <p>The journey shifts from observation to participation. The listener begins consciously walking a new path, guided by inner awareness rather than external certainty.</p>
+        <h4>Role Within the Album</h4>
+        <p>This marks the first movement of transformation. Awakening becomes something that is lived rather than merely observed.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">Awareness grows through the choices we make each day.</p>
+        </div>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Growth</li><li>Movement</li><li>Intuition</li><li>Trust</li><li>Purpose</li></ul>
+        <h4>Connection to the Next Track</h4>
+        <p>Every journey eventually discovers that progress also requires stillness, leading into <strong>Stand in Stillness.</strong></p>
+        <h4>Reflection</h4>
+        <p>Moving forward sometimes begins by becoming fully present.</p>
+        </div>
+      </article>
+
+      <article class="track reveal" id="track-5">
+        <span class="ghost ghost-num" aria-hidden="true">05</span>
+        <div class="container">
+        <p class="track-number">Track 5</p>
+        <h3 class="track-title">Stand in Stillness</h3>
+        <h4>Overview</h4>
+        <p>The closing chapter of Act I reminds the listener that silence can reveal as much as action. Before continuing deeper into the journey, there is value in pausing, observing, and listening.</p>
+        <h4>Role Within the Album</h4>
+        <p>This track concludes the opening act by establishing inner stillness as the foundation for everything that follows.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">Stillness creates space for understanding.</p>
+        </div>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Peace</li><li>Reflection</li><li>Patience</li><li>Presence</li><li>Awareness</li></ul>
+        <h4>Connection to the Next Act</h4>
+        <p>With the foundation established, the journey is ready to move beyond curiosity into genuine awakening.</p>
+        </div>
+      </article>
+
+      <div class="act-summary reveal">
+        <h4>Act I Summary</h4>
+        <p>The Call is ultimately an invitation.</p>
+        <p>It does not demand belief or certainty. Instead, it encourages curiosity, awareness, and the willingness to begin asking deeper questions. By the end of the first act, the listener has crossed the threshold into a journey that will continue unfolding throughout the remainder of the album.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ---------- ACT II DIVIDER ---------- -->
+  <section class="cinematic act-divider act-divider--2" id="act-ii">
+    <span class="ghost ghost-roman" aria-hidden="true">II</span>
+    <div class="constellation" aria-hidden="true"></div>
+    <div class="container reveal-slow">
+      <span class="eyebrow">Complete Track Guide</span>
+      <h1>The Awakening</h1>
+      <div class="divider"></div>
+      <p class="act-intro">The second act marks the point where curiosity becomes transformation. The listener is no longer simply observing unusual experiences but begins to reconsider old assumptions, explore new perspectives, and develop a deeper relationship with the journey itself.</p>
+    </div>
+  </section>
+
+  <section id="act-ii-tracks">
+    <div class="section-inner">
+
+      <article class="track reveal" id="track-6">
+        <span class="ghost ghost-num" aria-hidden="true">06</span>
+        <div class="container">
+        <p class="track-number">Track 6</p>
+        <h3 class="track-title">Rise and Awaken</h3>
+        <h4>Overview</h4>
+        <p>This track marks the conscious decision to continue the journey. What began as curiosity now becomes an active process of growth and self-discovery.</p>
+        <h4>Role Within the Album</h4>
+        <p>Rise and Awaken serves as the opening chapter of Act II, inviting the listener to move from passive observation toward intentional transformation.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">Awakening begins with the willingness to grow.</p>
+        </div>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Growth</li><li>Courage</li><li>Awareness</li><li>Hope</li><li>Transformation</li></ul>
+        <h4>Connection to the Next Track</h4>
+        <p>As awareness grows, the listener begins noticing that not every message arrives through words. This naturally leads into <strong>The Silent Call.</strong></p>
+        <h4>Reflection</h4>
+        <p>Every meaningful journey begins with the decision to take the next step.</p>
+        </div>
+      </article>
+
+      <article class="track reveal" id="track-7">
+        <span class="ghost ghost-num" aria-hidden="true">07</span>
+        <div class="container">
+        <p class="track-number">Track 7</p>
+        <h3 class="track-title">The Silent Call</h3>
+        <h4>Overview</h4>
+        <p>The Silent Call continues the journey into Act II — The Awakening by exploring the quiet moments that often shape our lives the most. Rather than presenting awakening as a dramatic event, the song describes it as something subtle—an inner realization that gradually becomes impossible to ignore.</p>
+        <p>Throughout the lyrics, recurring imagery such as light, stars, echoes, and ancient symbols creates an atmosphere of quiet discovery. The song suggests that growth often begins in silence, long before it becomes visible to the outside world.</p>
+        <h4>Role Within the Album</h4>
+        <p>As the seventh chapter of The Awakening Code, The Silent Call shifts the focus from the collective energy of Rise and Awaken back toward the individual's inner experience.</p>
+        <p>The journey is no longer about recognizing that change is possible.</p>
+        <p>It is about learning to recognize the quiet voice that encourages us to continue moving forward.</p>
+        <p>The song reminds us that lasting transformation rarely begins with noise. It begins with awareness.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">The Silent Call explores the idea that meaningful change often starts with a quiet realization rather than a dramatic moment.</p>
+        </div>
+        <p>Whether that realization comes through reflection, intuition, memory, or hope, it invites us to listen more carefully to ourselves and to remain open to personal growth.</p>
+        <p>The song encourages trust in the process of becoming, even when the path ahead is not yet fully visible.</p>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Awareness</li><li>Inner Guidance</li><li>Hope</li><li>Reflection</li><li>Growth</li><li>Intuition</li><li>Connection</li><li>Renewal</li><li>Trust</li></ul>
+        <h4>Connection to Track 8</h4>
+        <p>Having learned to recognize the quiet voice within, the journey now moves toward a deeper understanding of identity and purpose.</p>
+        <p>The next chapter explores what happens when awareness begins to shape not only how we think, but also how we choose to live.</p>
+        <h4>Reflection</h4>
+        <p>The most important voice is not always the loudest.</p>
+        <p>Sometimes the moments that shape our lives arrive quietly, asking only that we are willing to listen.</p>
+        <p>Awareness begins not with certainty, but with attention.</p>
+        </div>
+      </article>
+
+      <article class="track reveal" id="track-8">
+        <span class="ghost ghost-num" aria-hidden="true">08</span>
+        <div class="container">
+        <p class="track-number">Track 8</p>
+        <h3 class="track-title">The Awakening Code</h3>
+        <h4>Overview</h4>
+        <p>The title track represents the heart of the album. Here, the different ideas introduced throughout the journey begin to connect into one larger narrative.</p>
+        <h4>Role Within the Album</h4>
+        <p>This song serves as the central turning point where the listener recognizes that every previous experience has been preparing for a deeper understanding of the journey.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote is-gold">The code is discovered through awareness, not given by others.</p>
+        </div>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Awakening</li><li>Purpose</li><li>Transformation</li><li>Unity</li><li>Self-Discovery</li></ul>
+        <h4>Connection to the Next Track</h4>
+        <p>With the central idea established, the journey expands toward one of the album's most discussed concepts: <strong>The Mystery of 144,000.</strong></p>
+        <h4>Reflection</h4>
+        <p>The search ultimately leads inward before it expands outward.</p>
+        </div>
+      </article>
+
+      <article class="track reveal" id="track-9">
+        <span class="ghost ghost-num" aria-hidden="true">09</span>
+        <div class="container">
+        <p class="track-number">Track 9</p>
+        <h3 class="track-title">The Mystery of 144,000</h3>
+        <h4>Overview</h4>
+        <p>This chapter explores one of the most symbolic and widely interpreted ideas found across spiritual traditions. Rather than defining a single explanation, the song invites listeners to reflect on its possible meanings.</p>
+        <h4>Role Within the Album</h4>
+        <p>The album deliberately presents this subject as an invitation to explore rather than a conclusion to accept.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">Some mysteries exist to inspire reflection rather than certainty.</p>
+        </div>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Mystery</li><li>Purpose</li><li>Reflection</li><li>Symbolism</li><li>Unity</li></ul>
+        <h4>Connection to the Next Track</h4>
+        <p>Questions concerning purpose naturally lead toward the idea explored in <strong>The Avatar Seed.</strong></p>
+        <h4>Reflection</h4>
+        <p>The value of a mystery often lies in the journey of exploring it.</p>
+        </div>
+      </article>
+
+      <article class="track reveal" id="track-10">
+        <span class="ghost ghost-num" aria-hidden="true">10</span>
+        <div class="container">
+        <p class="track-number">Track 10</p>
+        <h3 class="track-title">The Avatar Seed</h3>
+        <h4>Overview</h4>
+        <p>The journey now turns toward the potential that exists within every individual. According to the worldview explored throughout this album, every person carries the possibility of growth, remembrance, and transformation.</p>
+        <h4>Role Within the Album</h4>
+        <p>This song concludes Act II by shifting the focus from external signs toward the individual potential that exists within each listener.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">Transformation begins from within.</p>
+        </div>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Purpose</li><li>Growth</li><li>Potential</li><li>Hope</li><li>Transformation</li></ul>
+        <h4>Connection to the Next Act</h4>
+        <p>With the individual journey established, the album expands toward larger questions concerning humanity and existence in Act III.</p>
+        </div>
+      </article>
+
+      <div class="act-summary reveal">
+        <h4>Act II Summary</h4>
+        <p>The Awakening transforms curiosity into conscious growth.</p>
+        <p>By the end of this act, the listener is no longer simply observing unusual experiences. Instead, the journey has become deeply personal, encouraging reflection, self-discovery, and the possibility that meaningful transformation begins from within.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ---------- ACT III DIVIDER ---------- -->
+  <section class="cinematic act-divider act-divider--3" id="act-iii">
+    <span class="ghost ghost-roman" aria-hidden="true">III</span>
+    <div class="constellation" aria-hidden="true"></div>
+    <div class="container reveal-slow">
+      <span class="eyebrow">Complete Track Guide</span>
+      <h1>The Revelation</h1>
+      <div class="divider"></div>
+      <p class="act-intro">The third act expands the journey beyond the individual. According to the worldview explored throughout the album, awakening naturally leads to broader questions about humanity, consciousness, history, and our place within a much larger reality. Rather than presenting definitive answers, these chapters invite listeners to explore new perspectives while remaining free to form their own conclusions.</p>
+    </div>
+  </section>
+
+  <section id="act-iii-tracks">
+    <div class="section-inner">
+
+      <article class="track reveal" id="track-11">
+        <span class="ghost ghost-num" aria-hidden="true">11</span>
+        <div class="container">
+        <p class="track-number">Track 11</p>
+        <h3 class="track-title">The Dimensional Beings</h3>
+        <h4>Overview</h4>
+        <p>This chapter explores the possibility that reality extends beyond ordinary perception. According to the worldview presented throughout the album, humanity exists within a far greater cosmos than it commonly recognizes.</p>
+        <h4>Role Within the Album</h4>
+        <p>The Dimensional Beings marks the point where the journey expands beyond personal awakening toward a broader exploration of existence.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">Awakening invites us to consider realities beyond our current understanding.</p>
+        </div>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Consciousness</li><li>Mystery</li><li>Curiosity</li><li>Perspective</li><li>Exploration</li></ul>
+        <h4>Connection to the Next Track</h4>
+        <p>As awareness expands, attention turns toward humanity itself and the possibility that more may exist beneath the surface in <strong>Hidden Among Us</strong>.</p>
+        <h4>Reflection</h4>
+        <p>Every new perspective begins by acknowledging that we may not yet understand everything.</p>
+        </div>
+      </article>
+
+      <article class="track reveal" id="track-12">
+        <span class="ghost ghost-num" aria-hidden="true">12</span>
+        <div class="container">
+        <p class="track-number">Track 12</p>
+        <h3 class="track-title">Hidden Among Us</h3>
+        <h4>Overview</h4>
+        <p>This song explores the possibility that extraordinary potential may exist within ordinary people. According to the album's worldview, awakening is not reserved for a select few but can emerge wherever curiosity, compassion, and awareness are present.</p>
+        <h4>Role Within the Album</h4>
+        <p>The focus shifts from external mysteries toward humanity itself.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">Great potential often exists where we least expect it.</p>
+        </div>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Human Potential</li><li>Unity</li><li>Awareness</li><li>Compassion</li><li>Discovery</li></ul>
+        <h4>Connection to the Next Track</h4>
+        <p>Recognizing hidden potential naturally leads toward the deeper interconnectedness explored in <strong>Threads of Eternity</strong>.</p>
+        <h4>Reflection</h4>
+        <p>Sometimes the greatest discoveries are found within ourselves and one another.</p>
+        </div>
+      </article>
+
+      <article class="track reveal" id="track-13">
+        <span class="ghost ghost-num" aria-hidden="true">13</span>
+        <div class="container">
+        <p class="track-number">Track 13</p>
+        <h3 class="track-title">Threads of Eternity</h3>
+        <h4>Overview</h4>
+        <p>Threads of Eternity reflects upon the invisible connections that link humanity across generations, cultures, and time. The song suggests that every individual life contributes to a much larger story.</p>
+        <h4>Role Within the Album</h4>
+        <p>This chapter broadens the listener's perspective from individual experience toward collective interconnectedness.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">Everything is more deeply connected than it first appears.</p>
+        </div>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Interconnectedness</li><li>Humanity</li><li>Time</li><li>Unity</li><li>Continuity</li></ul>
+        <h4>Connection to the Next Track</h4>
+        <p>These invisible patterns naturally lead toward one of the album's most visually symbolic chapters: <strong>Sacred Geometry</strong>.</p>
+        <h4>Reflection</h4>
+        <p>Understanding often grows through recognizing relationships rather than isolated events.</p>
+        </div>
+      </article>
+
+      <article class="track reveal" id="track-14">
+        <span class="ghost ghost-num" aria-hidden="true">14</span>
+        <div class="container">
+        <p class="track-number">Track 14</p>
+        <h3 class="track-title">Sacred Geometry</h3>
+        <h4>Overview</h4>
+        <p>Sacred Geometry explores patterns, symmetry, and the recurring structures that appear throughout nature, mathematics, art, and human creativity. Within the album's worldview, these patterns symbolize harmony rather than certainty.</p>
+        <h4>Role Within the Album</h4>
+        <p>This song represents the culmination of the search for order within apparent complexity.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">Harmony can often be discovered within patterns that connect life together.</p>
+        </div>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Harmony</li><li>Balance</li><li>Nature</li><li>Creation</li><li>Wonder</li></ul>
+        <h4>Connection to the Next Track</h4>
+        <p>With the patterns recognized, the final act begins by confronting uncertainty in <strong>Nibiru Complex</strong>.</p>
+        <h4>Reflection</h4>
+        <p>Beauty often reveals itself through relationships rather than isolated forms.</p>
+        </div>
+      </article>
+
+      <article class="track reveal" id="track-15">
+        <span class="ghost ghost-num" aria-hidden="true">15</span>
+        <div class="container">
+        <p class="track-number">Track 15</p>
+        <h3 class="track-title">Nibiru Complex</h3>
+        <h4>Overview</h4>
+        <p>Nibiru Complex is the emotional turning point of The Awakening Code. Through vivid imagery of red skies, fading stars, and a world overshadowed by uncertainty, the song explores moments when fear, loss, and doubt seem overwhelming.</p>
+        <p>The title draws on the symbolism surrounding Nibiru—a name that has appeared in mythology, speculative theories, and popular culture. Within the context of this album, it serves as a metaphor for confronting our deepest fears and the uncertainty that can accompany periods of profound change.</p>
+        <p>Rather than focusing on the celestial idea itself, the song explores the emotional experience of facing darkness and discovering that hope can endure.</p>
+        <h4>Role Within the Album</h4>
+        <p>As the emotional climax of Act III — The Revelation, Nibiru Complex represents the moment when insight is tested by adversity.</p>
+        <p>The previous songs explored questions, symbols, forgotten history and possibilities.</p>
+        <p>Now those reflections are challenged by uncertainty.</p>
+        <p>Transformation is rarely comfortable. Before growth becomes visible, it often requires confronting fear, grief, and the temptation to give up. This song captures that emotional threshold.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">At its heart, Nibiru Complex reminds us that darkness does not have to be the end of the story.</p>
+        </div>
+        <p>The shift after the bridge—from despair to hope—symbolizes resilience. Even after loss, uncertainty, or disappointment, the possibility of renewal remains.</p>
+        <p>The closing message is simple but powerful: hope is not the denial of hardship, but the choice to continue despite it.</p>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Resilience</li><li>Hope</li><li>Transformation</li><li>Fear</li><li>Renewal</li><li>Courage</li><li>Perseverance</li><li>Light After Darkness</li><li>Inner Strength</li></ul>
+        <h4>Connection to Track 16</h4>
+        <p>Having confronted fear and uncertainty, the journey moves into the final act.</p>
+        <p>The next chapter reveals how the greatest battles are not always physical, but often take place within human consciousness itself.</p>
+        <p>The transformation continues.</p>
+        <h4>Reflection</h4>
+        <p>Every meaningful journey includes moments when the future feels uncertain.</p>
+        <p>Darkness, loss, and doubt are experiences shared by many people throughout life.</p>
+        <p>What defines transformation is not the absence of those moments, but the willingness to keep moving until hope becomes visible again.</p>
+        </div>
+      </article>
+
+      <div class="act-summary reveal">
+        <h4>Act III Summary</h4>
+        <p>The Revelation expands the journey beyond the individual.</p>
+        <p>Questions of identity become questions about humanity.</p>
+        <p>Personal awakening becomes collective reflection.</p>
+        <p>Rather than insisting upon certainty, the third act encourages humility, exploration, and openness toward ideas that challenge familiar perspectives.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ---------- ACT IV DIVIDER ---------- -->
+  <section class="cinematic act-divider act-divider--4" id="act-iv">
+    <span class="ghost ghost-roman" aria-hidden="true">IV</span>
+    <div class="constellation" aria-hidden="true"></div>
+    <div class="container reveal-slow">
+      <span class="eyebrow">Complete Track Guide</span>
+      <h1>The Transformation</h1>
+      <div class="divider"></div>
+      <p class="act-intro">The final act brings the journey back to its most important destination: the human heart. After exploring questions about consciousness, symbolism, and humanity, the album concludes by focusing on hope, compassion, responsibility, and the possibility of creating a better future. Transformation is presented not as a single moment, but as a lifelong process.</p>
+    </div>
+  </section>
+
+  <section id="act-iv-tracks" style="border-bottom:none;">
+    <div class="section-inner">
+
+      <article class="track reveal" id="track-16">
+        <span class="ghost ghost-num" aria-hidden="true">16</span>
+        <div class="container">
+        <p class="track-number">Track 16</p>
+        <h3 class="track-title">The Silent War</h3>
+        <h4>Overview</h4>
+        <p>The Silent War presents one of the central revelations of The Awakening Code.</p>
+        <p>According to the worldview explored throughout this album, humanity is living through an unseen conflict. It is not a conventional war fought with weapons, but a struggle over consciousness, perception, and the future direction of humanity.</p>
+        <p>On one side stands The Established Order—governments, mainstream media, and global institutions that, within the album's narrative, seek to preserve existing systems of power and control.</p>
+        <p>On the other side stand the Dimensional Beings—guardians who, according to this perspective, work to help humanity remember its forgotten origins and awaken to a greater understanding of reality.</p>
+        <p>The song describes this conflict as taking place largely beyond ordinary perception, influencing human awareness rather than physical battlefields.</p>
+        <h4>Role Within the Album</h4>
+        <p>This chapter marks the point where awakening changes how reality itself is interpreted.</p>
+        <p>The previous songs introduced ideas about consciousness, forgotten history, the 144,000, and the Avatar Seed.</p>
+        <p>The Silent War brings these themes together by presenting them as parts of a larger reality in which humanity is participating, whether consciously or unconsciously.</p>
+        <p>From this perspective, awakening is not simply personal growth—it is the process of recognizing an ongoing conflict that has always existed beneath the surface of ordinary life.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">The song proposes that the greatest battles are fought within human consciousness.</p>
+        </div>
+        <p>Fear, distraction, and division are presented as forces that maintain existing systems, while awareness, compassion, and truth are presented as forces that move humanity toward a different future.</p>
+        <p>The lyrics encourage listeners to remain calm, think independently, and choose love over fear as they navigate this unseen conflict.</p>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Awakening</li><li>Consciousness</li><li>Truth</li><li>Discernment</li><li>Freedom</li><li>Love over Fear</li><li>Unity</li><li>Inner Strength</li><li>Transformation</li></ul>
+        <h4>Reflection</h4>
+        <p>According to the worldview explored throughout The Awakening Code, awakening changes more than the individual—it changes how reality itself is perceived.</p>
+        <p>The Silent War suggests that the future of humanity is shaped not only by external events, but by the level of awareness each person chooses to cultivate.</p>
+        </div>
+      </article>
+
+      <article class="track reveal" id="track-17">
+        <span class="ghost ghost-num" aria-hidden="true">17</span>
+        <div class="container">
+        <p class="track-number">Track 17</p>
+        <h3 class="track-title">When the Veil Falls</h3>
+        <h4>Overview</h4>
+        <p>This chapter symbolizes the moment when old perspectives begin to dissolve and new understanding becomes possible. Rather than claiming absolute truth, the song represents the courage to see life from a broader perspective.</p>
+        <h4>Role Within the Album</h4>
+        <p>The beginning of the final act. Reflection turns into acceptance.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">Growth begins when we are willing to see beyond our previous assumptions.</p>
+        </div>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Awareness</li><li>Transformation</li><li>Perspective</li><li>Acceptance</li><li>Hope</li></ul>
+        <h4>Reflection</h4>
+        <p>Every ending creates space for a new beginning.</p>
+        </div>
+      </article>
+
+      <article class="track reveal" id="track-18">
+        <span class="ghost ghost-num" aria-hidden="true">18</span>
+        <div class="container">
+        <p class="track-number">Track 18</p>
+        <h3 class="track-title">Let Me Be Your Guide</h3>
+        <h4>Overview</h4>
+        <p>This song offers reassurance rather than instruction. Guidance is presented as encouragement, reminding listeners that they never truly walk their journey alone.</p>
+        <h4>Role Within the Album</h4>
+        <p>Compassion becomes the central theme of the journey.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">The greatest guidance empowers others to discover their own path.</p>
+        </div>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Compassion</li><li>Guidance</li><li>Trust</li><li>Love</li><li>Unity</li></ul>
+        <h4>Reflection</h4>
+        <p>True guidance never removes freedom—it strengthens it.</p>
+        </div>
+      </article>
+
+      <article class="track reveal" id="track-19">
+        <span class="ghost ghost-num" aria-hidden="true">19</span>
+        <div class="container">
+        <p class="track-number">Track 19</p>
+        <h3 class="track-title">The Great Alignment</h3>
+        <h4>Overview</h4>
+        <p>The different themes explored throughout the album begin to converge. Personal growth, human connection, and hope become parts of one larger picture.</p>
+        <h4>Role Within the Album</h4>
+        <p>The climax of the conceptual journey.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">Harmony begins when our thoughts, actions, and values move together.</p>
+        </div>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Unity</li><li>Balance</li><li>Harmony</li><li>Purpose</li><li>Connection</li></ul>
+        <h4>Reflection</h4>
+        <p>Alignment begins within before it appears in the world around us.</p>
+        </div>
+      </article>
+
+      <article class="track reveal" id="track-20">
+        <span class="ghost ghost-num" aria-hidden="true">20</span>
+        <div class="container">
+        <p class="track-number">Track 20</p>
+        <h3 class="track-title">New Earth</h3>
+        <h4>Overview</h4>
+        <p>Rather than describing a physical destination, New Earth symbolizes the possibility of creating a more compassionate world through individual transformation.</p>
+        <h4>Role Within the Album</h4>
+        <p>Hope becomes the defining message of the album.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote">A better future begins with the choices we make today.</p>
+        </div>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Hope</li><li>Compassion</li><li>Unity</li><li>Renewal</li><li>Love</li></ul>
+        <h4>Reflection</h4>
+        <p>Every better world begins inside someone's heart.</p>
+        </div>
+      </article>
+
+      <article class="track reveal" id="track-21">
+        <span class="ghost ghost-num" aria-hidden="true">21</span>
+        <div class="container">
+        <p class="track-number">Track 21</p>
+        <h3 class="track-title">Wake Up, Rise High</h3>
+        <h4>Overview</h4>
+        <p>The album closes with an invitation rather than a command. The listener is encouraged to carry the lessons of the journey into everyday life with courage, compassion, and hope.</p>
+        <h4>Role Within the Album</h4>
+        <p>The conclusion of The Awakening Code.</p>
+        <h4>Core Message</h4>
+        <div class="pull-quote-wrap reveal-slow" style="margin: var(--space-md) auto;">
+          <span class="pq-mark" aria-hidden="true"></span>
+          <p class="pull-quote is-gold">Awakening is not the destination—it is the beginning.</p>
+        </div>
+        <h4>Key Themes</h4>
+        <ul class="theme-list"><li>Hope</li><li>Courage</li><li>Love</li><li>Awareness</li><li>Purpose</li></ul>
+        <h4>Final Reflection</h4>
+        <p>Every listener will leave this album with a different interpretation.</p>
+        <p>That diversity of perspective is not a weakness—it is the purpose.</p>
+        <p>The Awakening Code has never been about convincing anyone what to believe.</p>
+        <p>It is an invitation to ask deeper questions, to remain curious, to treat one another with compassion, and to remember that meaningful change begins within ourselves.</p>
+        <p>Whatever path you choose after listening, may it bring greater wisdom, greater peace, and greater love.</p>
+        <p>Thank you for taking this journey.</p>
+        <p style="font-family: var(--font-subheading); font-style: italic; color: var(--color-gold);">— Patrick Pascal Reerink</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= RECURRING THEMES ================= -->
+  <section id="recurring-themes">
+    <div class="section-inner reveal">
+      <h2>Recurring Themes</h2>
+      <div class="divider divider--left"></div>
+      <ul class="index-list">
+        <li><span class="idx-num" aria-hidden="true">01</span>Curiosity</li>
+        <li><span class="idx-num" aria-hidden="true">02</span>Awareness</li>
+        <li><span class="idx-num" aria-hidden="true">03</span>Compassion</li>
+        <li><span class="idx-num" aria-hidden="true">04</span>Unity</li>
+        <li><span class="idx-num" aria-hidden="true">05</span>Transformation</li>
+        <li><span class="idx-num" aria-hidden="true">06</span>Hope</li>
+        <li><span class="idx-num" aria-hidden="true">07</span>Conscious Choice</li>
+        <li><span class="idx-num" aria-hidden="true">08</span>Personal Growth</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= GLOSSARY ================= -->
+  <section id="glossary">
+    <div class="section-inner reveal">
+      <h2>Glossary</h2>
+      <div class="divider divider--left"></div>
+      <ul class="index-list">
+        <li><span class="idx-num" aria-hidden="true">01</span>Awakening</li>
+        <li><span class="idx-num" aria-hidden="true">02</span>Consciousness</li>
+        <li><span class="idx-num" aria-hidden="true">03</span>Frequency</li>
+        <li><span class="idx-num" aria-hidden="true">04</span>Sacred Geometry</li>
+        <li><span class="idx-num" aria-hidden="true">05</span>Synchronicity</li>
+        <li><span class="idx-num" aria-hidden="true">06</span>Avatar Seed</li>
+        <li><span class="idx-num" aria-hidden="true">07</span>The Awakening Code</li>
+        <li><span class="idx-num" aria-hidden="true">08</span>Dimensional Beings</li>
+        <li><span class="idx-num" aria-hidden="true">09</span>The Established Order</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= SOURCES OF INSPIRATION ================= -->
+  <section id="sources-of-inspiration">
+    <div class="section-inner reveal">
+      <h2>Sources of Inspiration</h2>
+      <div class="divider divider--left"></div>
+      <ul class="index-list">
+        <li><span class="idx-num" aria-hidden="true">01</span>Philosophy</li>
+        <li><span class="idx-num" aria-hidden="true">02</span>Comparative Religion</li>
+        <li><span class="idx-num" aria-hidden="true">03</span>Mythology</li>
+        <li><span class="idx-num" aria-hidden="true">04</span>Cosmology</li>
+        <li><span class="idx-num" aria-hidden="true">05</span>Symbolism</li>
+        <li><span class="idx-num" aria-hidden="true">06</span>Personal Reflection</li>
+        <li><span class="idx-num" aria-hidden="true">07</span>Human Consciousness</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= ACKNOWLEDGEMENTS ================= -->
+  <section id="acknowledgements">
+    <div class="section-inner reveal">
+      <h2>Acknowledgements</h2>
+      <div class="divider divider--left"></div>
+      <p class="lede">Music has the unique ability to connect people across cultures, languages, beliefs, and generations. It reminds us that, despite our differences, we all share the same human experience: the desire to understand, to grow, and to find meaning.</p>
+      <p>My deepest gratitude goes to everyone who has taken the time to listen to The Awakening Code. Whether you listened with curiosity, reflection, or simply for the love of music, your presence is part of this journey.</p>
+      <p>Thank you to every artist, thinker, writer, philosopher, and storyteller whose work has inspired generations to ask meaningful questions and explore new perspectives. Their ideas, creativity, and courage have helped shape the foundation upon which this album was built.</p>
+      <p>I am also grateful to my family, friends, and everyone who has supported me throughout this creative process. Every conversation, challenge, and moment of encouragement has contributed, in its own way, to bringing this project to life.</p>
+      <p>Most of all, thank you to those who continue to believe that hope, compassion, curiosity, and understanding can help create a better future.</p>
+      <p>May this album remind you that every journey begins with a single step, every question opens a new possibility, and every act of kindness has the power to create lasting change.</p>
+      <p>Thank you for listening.</p>
+      <p style="color: var(--color-gold);">The journey continues.</p>
+    </div>
+  </section>
+
+  <!-- ================= ALBUM CREDITS ================= -->
+  <section id="album-credits">
+    <div class="section-inner reveal">
+      <h2>Album Credits</h2>
+      <div class="divider divider--left"></div>
+
+      <div class="credit-group">
+        <h3>Album</h3>
+        <dl>
+          <dt>Title</dt><dd>The Awakening Code</dd>
+          <dt>Artist</dt><dd>Patrick Pascal Reerink (PPR058x)</dd>
+          <dt>Genre</dt><dd>Afrobeat</dd>
+          <dt>Release Date</dt><dd>02 • 08 • 2026</dd>
+          <dt>Version</dt><dd>Official Master Edition 1.0</dd>
+        </dl>
+      </div>
+
+      <div class="credit-group">
+        <h3>Creative Credits</h3>
+        <dl>
+          <dt>Concept, Story &amp; Creative Direction</dt><dd>Patrick Pascal Reerink</dd>
+          <dt>Lyrics</dt><dd>Patrick Pascal Reerink</dd>
+          <dt>Artistic Vision</dt><dd>Patrick Pascal Reerink</dd>
+          <dt>Album Concept Development</dt><dd>Patrick Pascal Reerink</dd>
+        </dl>
+      </div>
+
+      <div class="credit-group">
+        <h3>Visual Identity</h3>
+        <dl>
+          <dt>Brand Concept &amp; Visual Direction</dt><dd>Patrick Pascal Reerink</dd>
+          <dt>Album Artwork</dt><dd>Created using AI-assisted creative tools under the artistic direction of Patrick Pascal Reerink.</dd>
+        </dl>
+      </div>
+
+      <div class="credit-group">
+        <h3>Production</h3>
+        <dl>
+          <dt>Music Production</dt><dd>Produced using AI-assisted music production workflows under the creative direction of Patrick Pascal Reerink.</dd>
+          <dt>Mastering</dt><dd>Final mastering by Patrick Pascal Reerink.</dd>
+        </dl>
+      </div>
+
+      <div class="credit-group">
+        <h3>Official Resources</h3>
+        <dl>
+          <dt>Official Artist</dt><dd>PPR058x</dd>
+          <dt>Album</dt><dd>The Awakening Code</dd>
+          <dt>Release Date</dt><dd>02 • 08 • 2026</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CLOSING MANIFESTO — distinct treatment ================= -->
+  <section class="manifesto" id="closing-manifesto">
+    <div class="constellation" aria-hidden="true"></div>
+    <div class="container reveal-slow">
+      <span class="eyebrow">Closing Manifesto</span>
+      <h1>The Awakening Manifesto</h1>
+      <div class="divider"></div>
+      <div class="manifesto-lines">
+        <p>We live in an age of endless information... yet genuine understanding remains rare.</p>
+        <p>We are constantly connected... yet many people feel more disconnected than ever.</p>
+        <p>Perhaps awakening is not about discovering something new. Perhaps it is about remembering what has always been there.</p>
+        <p>The courage to ask questions. The humility to admit we do not know everything. The wisdom to keep learning. The compassion to see ourselves in one another. The strength to choose hope when fear seems easier.</p>
+        <p>No book... no song... no teacher... no system... can complete your journey. They can only point toward the path. The next step has always belonged to you.</p>
+        <p>If this album has reminded you to pause... to observe... to think... to feel... or simply to appreciate the miracle of being alive... then its purpose has already been fulfilled.</p>
+        <p>May you continue walking with curiosity. May you continue leading with compassion. May you continue seeking wisdom without losing humility.</p>
+        <p>And above all... may you remember that the greatest transformation has never been the changing of the world. It has always been the awakening of the human heart.</p>
+        <p>The numbers may call... The journey may begin... But the choice has always been yours.</p>
+      </div>
+      <p class="sign-off">THE AWAKENING CODE<br><span style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em; color: var(--color-text-dim);">02 • 08 • 2026</span></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>The Awakening Code — Official Album Guide — Patrick Pascal Reerink (PPR058x)</p>
+</footer>
+
+<script>
+/* ==========================================================================
+   THE AWAKENING CODE — Premium Digital Book
+   Standalone Edition — all JavaScript embedded inline.
+   ========================================================================== */
+
+(function () {
+  "use strict";
+
+  /* ---------------- Reading progress bar ---------------- */
+  var progressBar = document.querySelector(".progress-bar");
+
+  function updateProgress() {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    if (progressBar) progressBar.style.width = pct + "%";
+  }
+
+  /* ---------------- Back to top ---------------- */
+  var backToTop = document.querySelector(".back-to-top");
+
+  function updateBackToTop() {
+    if (!backToTop) return;
+    if (window.scrollY > window.innerHeight * 0.6) {
+      backToTop.classList.add("is-visible");
+    } else {
+      backToTop.classList.remove("is-visible");
+    }
+  }
+
+  if (backToTop) {
+    backToTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  var onScroll = function () {
+    updateProgress();
+    updateBackToTop();
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  onScroll();
+
+  /* ---------------- Two-speed scroll reveals ----------------
+     .reveal    — quiet, quick (reading-mode prose)
+     .reveal-slow — held, slow (statement-mode pull-quotes, act stages)
+  ------------------------------------------------------------- */
+  var revealEls = document.querySelectorAll(".reveal, .reveal-slow");
+
+  if ("IntersectionObserver" in window && revealEls.length) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+    revealEls.forEach(function (el) { observer.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+  }
+
+  /* ---------------- Sticky Table of Contents panel ---------------- */
+  var tocToggle = document.querySelector(".toc-toggle");
+  var tocPanel = document.querySelector(".toc-panel");
+  var tocClose = document.querySelector(".toc-close");
+  var lastFocused = null;
+
+  function openToc() {
+    if (!tocPanel) return;
+    lastFocused = document.activeElement;
+    tocPanel.classList.add("is-open");
+    tocPanel.setAttribute("aria-hidden", "false");
+    if (tocClose) tocClose.focus();
+  }
+
+  function closeToc() {
+    if (!tocPanel) return;
+    tocPanel.classList.remove("is-open");
+    tocPanel.setAttribute("aria-hidden", "true");
+    if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
+  }
+
+  if (tocToggle) tocToggle.addEventListener("click", openToc);
+  if (tocClose) tocClose.addEventListener("click", closeToc);
+
+  if (tocPanel) {
+    tocPanel.addEventListener("click", function (e) {
+      if (e.target === tocPanel) closeToc();
+    });
+    tocPanel.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeToc);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && tocPanel.classList.contains("is-open")) closeToc();
+    });
+  }
+})();
+</script>
+</body>
+</html>
