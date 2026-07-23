@@ -43,7 +43,7 @@ prompts/   ──┘                        │
 ## Status
 
 - [x] Folder scaffold created (`agents/`, `knowledge/`, `prompts/`, `workflows/`, `memory/`, `docs/`, `marketing/`, `music/`, `branding/`, `automation/`, `scripts/`, `tests/`)
-- [ ] First agent defined in `agents/`
+- [x] First agent defined in `agents/` — the [CEO Agent](../agents/ceo/README.md), orchestrator for the whole system
 - [ ] First prompt templates in `prompts/`
 - [ ] First workflow in `workflows/`
 - [ ] Automation/scheduling wired up in `automation/`
