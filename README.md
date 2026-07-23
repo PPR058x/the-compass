@@ -67,6 +67,25 @@ Marketing project workspace for the album *The Awakening Code*.
 - `Prompts/` — AI generation prompts (image/video/audio) for brand-consistent content
 - `assets/` — final exported creative assets
 
+---
+
+## The Compass AI Operating System (foundation)
+
+Alongside the *Awakening Code* campaign above, this repo also holds the foundation for **The Compass AI Operating System** — a studio-wide structure meant to support multiple specialized AI agents over time. These folders are scaffolds for now; nothing here changes or depends on the campaign content above.
+
+- `agents/` — specialized AI agent definitions
+- `knowledge/` — shared knowledge base agents draw on
+- `prompts/` — reusable agent prompt templates *(distinct from `Prompts/` above, which holds creative-asset generation prompts)*
+- `workflows/` — multi-step pipelines that chain agents together
+- `memory/` — persistent agent memory/state
+- `marketing/` — studio-wide, agent-driven marketing infrastructure for future releases *(distinct from the campaign-specific marketing content above)*
+- `music/` — music production assets
+- `branding/` — studio-wide brand infrastructure *(distinct from `BRAND_BIBLE.md`, which stays campaign-specific)*
+- `automation/` — scheduling, triggers, and integrations for running agents/workflows
+- `scripts/` — utility and helper scripts
+- `tests/` — test suites for agents, workflows, and scripts
+- `docs/` — see [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the full architecture
+
 ## Status
 
 - [x] Project structure created
