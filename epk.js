@@ -20,9 +20,6 @@
 
   var C = window.COMPASS || {};
 
-  // How many releases (besides the lead) the Featured Releases grid shows.
-  var FEATURED_SELECTION_LIMIT = 6;
-
   function esc(str) {
     return String(str == null ? "" : str).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
@@ -214,25 +211,23 @@
     })[0];
   }
 
-  var TYPE_WEIGHT = { album: 0, ep: 1, single: 2 };
-  function typeWeight(t) { return TYPE_WEIGHT[t] != null ? TYPE_WEIGHT[t] : 9; }
-
-  // Newest first only as far as the data can tell: flagged entries, then
-  // exact releaseDate, then year; within a year, albums/EPs before singles,
-  // then catalog order. No ordering beyond that is assumed.
-  function selectFeatured(releases, lead, limit) {
+  // Album catalog: every album that has a stored tracklist, newest first as
+  // far as the data can tell (exact releaseDate, then year, then catalog
+  // order). Albums without tracks stay listed in Full discography only.
+  function albumCatalog(releases) {
     return releases
       .map(function (r, i) { return { r: r, i: i }; })
-      .filter(function (x) { return x.r !== lead; })
+      .filter(function (x) { return isCatalogAlbum(x.r); })
       .sort(function (a, b) {
-        return (b.r.featured ? 1 : 0) - (a.r.featured ? 1 : 0) ||
-          (b.r.releaseDate || "").localeCompare(a.r.releaseDate || "") ||
+        return (b.r.releaseDate || "").localeCompare(a.r.releaseDate || "") ||
           (b.r.year || 0) - (a.r.year || 0) ||
-          typeWeight(a.r.type) - typeWeight(b.r.type) ||
           a.i - b.i;
       })
-      .slice(0, limit)
       .map(function (x) { return x.r; });
+  }
+
+  function isCatalogAlbum(r) {
+    return r.type === "album" && !!(r.tracks && r.tracks.length);
   }
 
   function typeLabel(type) {
@@ -363,13 +358,19 @@
       "</div></article>";
   }
 
-  function releaseCardHtml(release) {
-    var meta = releaseMeta(release, false);
-    return '<article class="release-card" id="release-' + esc(release.id) + '">' +
+  // One album in the catalog grid: cover (or branded fallback), release
+  // info, title, track count and the shared Track List disclosure.
+  function albumCardHtml(release) {
+    // "Album" is implied by the section, so the info line is just the
+    // release date or year — short enough to stay on one line.
+    var info = releaseDateText(release);
+    var count = release.tracks.length;
+    return '<article class="album-card" id="album-' + esc(release.id) + '">' +
       coverHtml(release, false) +
-      '<div class="release-card-body">' +
-        '<h3 class="release-card-title">' + esc(release.title) + "</h3>" +
-        (meta ? '<p class="release-meta">' + esc(meta) + "</p>" : "") +
+      '<div class="album-card-body">' +
+        (info ? '<p class="album-card-info">' + esc(info) + "</p>" : "") +
+        '<h3 class="album-card-title">' + esc(release.title) + "</h3>" +
+        '<p class="album-card-count">' + count + (count === 1 ? " track" : " tracks") + "</p>" +
         platformLinksHtml(streamingItems(release.streaming), "platform-list--compact") +
         trackListHtml(release.tracks) +
       "</div></article>";
@@ -391,9 +392,18 @@
     var leadSlot = byId("release-featured");
     if (leadSlot && lead) leadSlot.innerHTML = leadReleaseHtml(lead);
 
-    var selection = byId("release-selection");
-    if (selection) {
-      selection.innerHTML = selectFeatured(releases, lead, FEATURED_SELECTION_LIMIT).map(releaseCardHtml).join("");
+    // The lead album is already shown in full above, so the grid skips it;
+    // the heading still counts the whole collection.
+    var catalog = byId("album-catalog-grid");
+    var albums = albumCatalog(releases);
+    var gridAlbums = albums.filter(function (r) { return r !== lead; });
+    if (catalog) catalog.innerHTML = gridAlbums.map(albumCardHtml).join("");
+    var albumCount = byId("album-catalog-count");
+    if (albumCount) {
+      var total = albums.length + " album" + (albums.length === 1 ? "" : "s");
+      albumCount.textContent = gridAlbums.length < albums.length && lead
+        ? total + " · " + lead.title + " featured above"
+        : total;
     }
 
     // Full discography: newest year first, then catalog order.
