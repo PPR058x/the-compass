@@ -680,6 +680,7 @@ section:last-of-type { border-bottom: none; }
 
 @media (max-width: 640px) {
   section { padding: var(--space-lg) 0; }
+  #cover { padding-bottom: 7.5rem; }
   .ghost-num { font-size: clamp(4.5rem, 26vw, 8rem); opacity: 0.035; }
   .act-stage { padding: var(--gutter); }
   .toc-list a { font-size: 1.05rem; }
