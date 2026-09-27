@@ -485,14 +485,15 @@
   }
 
   // Primary destination: COMPASS.artist.smartLink (Amuse). Every
-  // [data-listen-link] element (nav, hero, Listen section, footer) points
-  // there. The static href in epk.html is the no-JS fallback; with no
-  // smart link in the data it stays untouched.
+  // [data-listen-link] element (nav, hero, Listen section, footer) and the
+  // [data-all-links] "All links" CTA point there. The static href in
+  // epk.html is the no-JS fallback; with no smart link in the data it stays
+  // untouched. A rel already set in the markup is kept.
   function applySmartLink(smartLink) {
     if (!smartLink || !smartLink.url) return false;
-    document.querySelectorAll("[data-listen-link]").forEach(function (a) {
+    document.querySelectorAll("[data-listen-link], [data-all-links]").forEach(function (a) {
       a.href = smartLink.url;
-      if (/^https?:/i.test(smartLink.url)) { a.target = "_blank"; a.rel = "noopener"; }
+      if (/^https?:/i.test(smartLink.url)) { a.target = "_blank"; if (!a.rel) a.rel = "noopener"; }
     });
     return true;
   }
