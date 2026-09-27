@@ -1053,44 +1053,114 @@ p:last-child { margin-bottom: 0; }
 .release-copy { font-size: 1.15rem; max-width: 52ch; }
 .release-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 1.6rem 0; }
 
-/* Featured selection */
-/* Explicit column counts (6 → 3 → 2) so a six-release selection never
-   leaves an orphan row; auto-fill for any other selection size. */
-.release-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr));
-  gap: clamp(1rem, 2.4vw, 1.75rem);
-}
-.release-card { display: flex; flex-direction: column; gap: 0.9rem; min-width: 0; }
-.release-card .release-cover {
-  transition: border-color 0.3s var(--ease-quiet), transform 0.4s var(--ease-quiet), box-shadow 0.4s var(--ease-quiet);
-}
-.release-card:hover .release-cover {
-  border-color: var(--color-accent-line);
-  transform: translateY(-3px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(199, 165, 75, 0.08);
-}
-.release-card-title {
-  font-size: 0.98rem;
-  line-height: 1.3;
-  margin: 0 0 0.3rem;
-  overflow-wrap: anywhere;
-}
-.release-card .release-meta { font-size: 0.66rem; margin: 0; letter-spacing: 0.14em; text-transform: uppercase; }
-
-@media (min-width: 1100px) {
-  .release-grid:has(> :nth-child(6):last-child) { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-}
-@media (min-width: 600px) and (max-width: 1099px) {
-  .release-grid:has(> :nth-child(6):last-child),
-  .release-grid:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
 @media (max-width: 899px) {
   .release-lead { grid-template-columns: minmax(0, 1fr); }
   .release-lead .release-cover { max-width: 460px; }
 }
+
+/* Album catalog — every album with a stored tracklist.
+   4 columns → 3 (tablet) → 2 → one horizontal card per row (phones). */
+.album-catalog-count {
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  color: var(--color-text-faint);
+}
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: start; /* an opened tracklist never stretches its neighbours */
+}
+.album-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-accent-line-soft);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, #0f0e0b 0%, var(--color-bg-card) 100%);
+  transition: border-color 0.3s var(--ease-quiet), box-shadow 0.4s var(--ease-quiet);
+}
+.album-card:hover, .album-card:focus-within {
+  border-color: var(--color-accent-line);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45), 0 0 30px rgba(199, 165, 75, 0.06);
+}
+.album-card .release-cover {
+  border: none;
+  border-bottom: 1px solid var(--color-accent-line-soft);
+  border-radius: 0;
+}
+/* Placeholder covers in the catalog: the title and year already sit right
+   below the cover, so the placeholder shows only the motif and a quiet
+   PPR058x mark (no duplicated text). */
+.album-card .cover-fallback-title,
+.album-card .cover-fallback-meta { display: none; }
+.album-card .cover-fallback { justify-content: flex-end; padding-bottom: 8%; }
+.album-card .cover-fallback-mark { opacity: 0.18; }
+.album-card .cover-fallback-artist {
+  font-size: clamp(0.55rem, 4.4cqi, 0.72rem);
+  letter-spacing: 0.3em;
+  color: var(--color-gold-muted);
+}
+.album-card-body { padding: 1rem 1.1rem 0; min-width: 0; }
+.album-card-info {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold-muted);
+  margin: 0 0 0.45rem;
+}
+.album-card-title {
+  font-size: 1.05rem;
+  line-height: 1.25;
+  min-height: 2.5em; /* two lines, so closed cards line up */
+  margin: 0 0 0.35rem;
+  overflow-wrap: break-word;
+}
+.album-card-count {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+  margin: 0 0 0.9rem;
+}
+/* The shared Track List disclosure becomes the card's footer. */
+.album-card .epk-details { margin: 0 -1.1rem; padding: 0.85rem 1.1rem; }
+.album-card .epk-details:last-child { border-bottom: none; }
+.album-card .epk-details[open] { background: rgba(199, 165, 75, 0.03); }
+.album-card .track-list { padding-left: 2em; font-size: 0.95rem; line-height: 1.45; }
+.album-card .track-list li { padding: 0.22em 0; overflow-wrap: break-word; }
+
+@media (max-width: 1099px) {
+  .album-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 699px) {
+  .album-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (max-width: 599px) {
-  .release-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .album-grid { grid-template-columns: minmax(0, 1fr); }
+  /* Horizontal card: small cover left, details right, tracklist full width. */
+  .album-card {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    column-gap: 1rem;
+    align-items: start;
+    padding: 1rem 1rem 0;
+  }
+  .album-card-body { display: contents; }
+  .album-card .release-cover {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    border: 1px solid var(--color-accent-line-soft);
+  }
+  .album-card-info, .album-card-title, .album-card-count, .album-card .platform-list { grid-column: 2; }
+  /* Two-line minimum (not a fixed height): one- and two-line titles give
+     the same card height; longer titles still grow naturally. */
+  .album-card-title { min-height: 2.5em; }
+  .album-card .epk-details { grid-column: 1 / -1; margin: 0.9rem -1rem 0; padding: 0.85rem 1rem; }
+  .album-card .cover-fallback-artist { font-size: 0.55rem; letter-spacing: 0.22em; }
 }
 
 /* Disclosure widgets — track list, credits, lyrics */
@@ -1532,7 +1602,7 @@ p:last-child { margin-bottom: 0; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .epk-hero-scroll span { animation: none; }
-  .release-card .release-cover, .epk-cta { transition: none; }
+  .album-card, .epk-cta { transition: none; }
 }
 
 /* ==========================================================================
@@ -1563,7 +1633,8 @@ p:last-child { margin-bottom: 0; }
   .epk-bio-facts { position: static; margin-top: 0.5cm; }
   .epk-compass-emblem { width: 4cm; margin: 0 0 0.5cm; }
   .release-lead .release-cover { width: 6cm; margin-bottom: 0.5cm; box-shadow: none; }
-  .release-grid { grid-template-columns: repeat(3, 1fr); }
+  .album-grid { grid-template-columns: repeat(3, 1fr); }
+  .album-card { break-inside: avoid-page; }
   .epk-booking-panel { background: none !important; border-color: #999 !important; text-align: left; }
   .contact-card, .epk-bio-facts, .empty-state, .pending, .release-cover, .epk-stats, .epk-stats > div {
     border-color: #999 !important;

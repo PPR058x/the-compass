@@ -256,7 +256,11 @@
       <noscript><p class="empty-state">This section requires JavaScript to display the release catalog.</p></noscript>
 
       <div id="release-featured"></div>
-      <div class="release-grid" id="release-selection"></div>
+      <!-- Album catalog: every album with a stored tracklist, rendered by epk.js. -->
+      <div class="album-catalog" id="album-catalog">
+        <h3 class="subhead">Album catalog <span class="album-catalog-count" id="album-catalog-count"></span></h3>
+        <div class="album-grid" id="album-catalog-grid"></div>
+      </div>
 
       <!-- Listen: Amuse smart link as the primary destination; verified direct
            platform links (release streaming + artist socials) render below it
