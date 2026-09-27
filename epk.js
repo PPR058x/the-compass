@@ -371,6 +371,7 @@
         '<h3 class="release-card-title">' + esc(release.title) + "</h3>" +
         (meta ? '<p class="release-meta">' + esc(meta) + "</p>" : "") +
         platformLinksHtml(streamingItems(release.streaming), "platform-list--compact") +
+        trackListHtml(release.tracks) +
       "</div></article>";
   }
 
