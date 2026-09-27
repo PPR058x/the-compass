@@ -114,4 +114,12 @@
     probe.src = src;
   }
   document.querySelectorAll("[data-bg]").forEach(tryOptionalBackground);
+
+  /* ---------------- Central links page (Amuse smart link) ---------------- */
+  // Single source of truth: COMPASS.artist.smartLink.url (data/artist.js).
+  // The href in index.html is the no-JS fallback.
+  var smartLink = window.COMPASS && COMPASS.artist && COMPASS.artist.smartLink;
+  if (smartLink && smartLink.url) {
+    document.querySelectorAll("[data-all-links]").forEach(function (a) { a.href = smartLink.url; });
+  }
 })();
