@@ -3259,7 +3259,7 @@ COMPASS.releases = [
     lyrics: null,
     trackCount: 14,
     tracks: [
-      { number: 1, title: "Prinsesdag" },
+      { number: 1, title: "Prinsenvlag" },
       { number: 2, title: "Het Land van Loze Beloft(e)" },
       { number: 3, title: "Laat de Schapen Ontwaken" },
       { number: 4, title: "Verdeeld & Heers" },
@@ -3613,6 +3613,77 @@ COMPASS.releases = [
       { number: 21, title: "The Last Lunar Bloodline" },
       { number: 22, title: "“Thank You, Moon”" }
     ],
+    credits: []
+  },
+
+  // Added 2026-09-27 from the Amuse track list: the only active titles not
+  // yet on the site (as a release or an album track). Amuse gave the title
+  // only — type "single" (none belongs to a known album) and year are NOT
+  // confirmed; every other field is null/[] on purpose.
+  {
+    id: "zaden-van-bewustzijn",
+    title: "Zaden van Bewustzijn",
+    type: "single",
+    featured: false,
+    status: null,
+    genre: null,
+    year: null,
+    releaseDate: null,
+    releaseDateDisplay: null,
+    description: null,
+    releaseStrategy: null,
+    guideUrl: null,
+    images: { cover: null, coverBackground: null, actBackground: null },
+    streaming: { spotify: null, appleMusic: null, youtube: null, other: [] },
+    pressAssets: [],
+    musicVideo: null,
+    lyrics: null,
+    trackCount: null,
+    tracks: [],
+    credits: []
+  },
+  {
+    id: "fall-rise-become",
+    title: "Fall, Rise, Become",
+    type: "single",
+    featured: false,
+    status: null,
+    genre: null,
+    year: null,
+    releaseDate: null,
+    releaseDateDisplay: null,
+    description: null,
+    releaseStrategy: null,
+    guideUrl: null,
+    images: { cover: null, coverBackground: null, actBackground: null },
+    streaming: { spotify: null, appleMusic: null, youtube: null, other: [] },
+    pressAssets: [],
+    musicVideo: null,
+    lyrics: null,
+    trackCount: null,
+    tracks: [],
+    credits: []
+  },
+  {
+    id: "cosmic-consciousness",
+    title: "Cosmic Consciousness",
+    type: "single",
+    featured: false,
+    status: null,
+    genre: null,
+    year: null,
+    releaseDate: null,
+    releaseDateDisplay: null,
+    description: null,
+    releaseStrategy: null,
+    guideUrl: null,
+    images: { cover: null, coverBackground: null, actBackground: null },
+    streaming: { spotify: null, appleMusic: null, youtube: null, other: [] },
+    pressAssets: [],
+    musicVideo: null,
+    lyrics: null,
+    trackCount: null,
+    tracks: [],
     credits: []
   }
   // Add a future release by appending one object here with the same shape — no HTML changes needed.
