@@ -3252,7 +3252,7 @@ COMPASS.releases = [
     description: null,
     releaseStrategy: null,
     guideUrl: null,
-    images: { cover: null, coverBackground: null, actBackground: null },
+    images: { cover: { src: "assets/images/releases/albums/onder-de-vlag/Moments%20in%20Motion1.jpeg", alt: "Onder de Vlag — album cover", width: 3000, height: 3000 }, coverBackground: null, actBackground: null },
     streaming: { spotify: null, appleMusic: null, youtube: null, other: [] },
     pressAssets: [],
     musicVideo: null,
