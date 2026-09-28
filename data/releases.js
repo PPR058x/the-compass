@@ -66,7 +66,7 @@ COMPASS.releases = [
     guideUrl: "index.html",
 
     images: {
-      cover: null,           // e.g. { src: "assets/images/releases/albums/the-awakening-code/cover.webp", alt: "The Awakening Code — album cover", width: 1200, height: 1200, critical: true }
+      cover: { src: "assets/images/releases/albums/the-awakening-code/The%20Awakening%20Code.jpeg", alt: "The Awakening Code — album cover", width: 1254, height: 1254, critical: true },
       coverBackground: null, // e.g. { src: "assets/images/releases/albums/the-awakening-code/background.webp", alt: "" }
       actBackground: null    // e.g. { src: "assets/images/releases/albums/the-awakening-code/sacred-pattern.webp", alt: "" }
     },
