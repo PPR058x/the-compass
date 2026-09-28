@@ -3377,7 +3377,7 @@ COMPASS.releases = [
     description: null,
     releaseStrategy: null,
     guideUrl: null,
-    images: { cover: null, coverBackground: null, actBackground: null },
+    images: { cover: { src: "assets/images/releases/albums/celestial-groove/Celestial%20Groove.jpeg", alt: "Celestial Groove — album cover", width: 881, height: 870 }, coverBackground: null, actBackground: null },
     streaming: { spotify: null, appleMusic: null, youtube: null, other: [] },
     pressAssets: [],
     musicVideo: null,
