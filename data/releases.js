@@ -3417,7 +3417,7 @@ COMPASS.releases = [
     description: null,
     releaseStrategy: null,
     guideUrl: null,
-    images: { cover: null, coverBackground: null, actBackground: null },
+    images: { cover: { src: "assets/images/releases/albums/dakila-vibes/Dakila%20Vibes.jpeg", alt: "Dakila Vibes — album cover", width: 783, height: 776 }, coverBackground: null, actBackground: null },
     streaming: { spotify: null, appleMusic: null, youtube: null, other: [] },
     pressAssets: [],
     musicVideo: null,
