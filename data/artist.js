@@ -38,8 +38,8 @@ COMPASS.artist = {
 
   quickFacts: [
     { label: "Genre", value: "Electronic · Afrobeat · Afro House · Amapiano · Deep House", pending: false },
-    { label: "Based in", value: "location", pending: true },
-    { label: "Active since", value: "year", pending: true },
+    { label: "Based in", value: "Leeuwarden, Netherlands", pending: false },
+    { label: "Active since", value: "2025", pending: false },
     { label: "Current release", value: "The Awakening Code (2 Aug 2026)", pending: false }
   ],
 
