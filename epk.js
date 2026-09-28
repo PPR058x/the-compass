@@ -178,21 +178,28 @@
   }
 
   // Straight counts over data/releases.js — no number is typed by hand.
+  // Counts releases, never tracks. Albums use the same rule as the album
+  // catalog (albums with a stored tracklist); Releases is the sum of the
+  // counted albums, EPs and singles.
   function renderCatalogStats(releases) {
     var el = byId("catalog-stats");
     if (!el || !releases.length) return;
-    var stats = [{ value: releases.length, label: "Releases" }];
-    [["album", "Albums"], ["ep", "EPs"], ["single", "Singles"]].forEach(function (t) {
-      var n = releases.filter(function (r) { return r.type === t[0]; }).length;
-      if (n) stats.push({ value: n, label: t[1] });
+    var counted = releases.filter(function (r) {
+      return r.type === "album" ? isCatalogAlbum(r) : true;
     });
-    var years = releases.map(function (r) { return r.year; }).filter(Boolean);
+    var parts = [];
+    [["album", "Albums"], ["ep", "EPs"], ["single", "Singles"]].forEach(function (t) {
+      var n = counted.filter(function (r) { return r.type === t[0]; }).length;
+      if (n) parts.push({ value: n, label: t[1] });
+    });
+    var stats = [{ value: counted.length, label: "Releases" }].concat(parts);
+    var years = counted.map(function (r) { return r.year; }).filter(Boolean);
     if (years.length) {
       var min = Math.min.apply(null, years), max = Math.max.apply(null, years);
-      stats.push({ value: min === max ? String(min) : min + "–" + max, label: "Catalog years" });
+      stats.push({ value: min === max ? String(min) : min + "–" + max, label: "Catalog years", range: min !== max });
     }
     el.innerHTML = stats.map(function (s) {
-      return "<div><dt>" + esc(s.label) + "</dt><dd>" + esc(s.value) + "</dd></div>";
+      return "<div" + (s.range ? ' class="epk-stat--range"' : "") + "><dt>" + esc(s.label) + "</dt><dd>" + esc(s.value) + "</dd></div>";
     }).join("");
     el.hidden = false;
   }

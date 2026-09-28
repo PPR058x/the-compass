@@ -860,27 +860,39 @@ p:last-child { margin-bottom: 0; }
   border-bottom: 1px solid var(--color-accent-line-soft);
 }
 .epk-stats > div {
-  padding: 1.6rem 1rem;
+  padding: clamp(1.9rem, 3.4vw, 2.6rem) clamp(1rem, 2.5vw, 2rem);
   text-align: center;
   border-left: 1px solid var(--color-accent-line-soft);
 }
 .epk-stats > div:first-child { border-left: none; }
 .epk-stats dd {
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.9rem;
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
-  font-weight: 500;
-  line-height: 1.1;
-  color: var(--color-gold);
+  font-size: clamp(2rem, 3.8vw, 2.9rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  font-variant-numeric: lining-nums;
+  color: var(--color-gold); /* fallback where background-clip text is unsupported */
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* The year range is a span, not a count: smaller so it sits in balance. */
+.epk-stats > .epk-stat--range dd {
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+  letter-spacing: 0.08em;
+  line-height: calc(1em * 2.9 / 1.9); /* keeps the baseline row aligned with the counts */
 }
 .epk-stats dt {
   font-family: var(--font-mono);
-  font-size: 0.64rem;
-  letter-spacing: 0.2em;
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--color-text-dim);
 }
-.epk-stats > div { display: flex; flex-direction: column-reverse; }
+.epk-stats > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; }
 
 .epk-palette {
   display: flex;
@@ -929,8 +941,10 @@ p:last-child { margin-bottom: 0; }
   .epk-stats > div:nth-child(-n+2) { border-top: none; }
   .epk-stats > div:nth-child(even) { border-left: 1px solid var(--color-accent-line-soft); }
   .epk-stats > div:last-child:nth-child(odd) { grid-column: 1 / -1; }
-  .epk-stats > div { padding: 1.3rem 0.5rem; }
-  .epk-stats dd { font-size: 1.6rem; white-space: nowrap; }
+  .epk-stats > div { padding: 1.5rem 0.5rem; }
+  .epk-stats dd { font-size: 1.75rem; white-space: nowrap; margin-bottom: 0.7rem; }
+  .epk-stats > .epk-stat--range dd { font-size: 1.2rem; line-height: calc(1.75rem * 1); }
+  .epk-stats dt { letter-spacing: 0.22em; }
 }
 
 /* ==========================================================================
@@ -1618,7 +1632,7 @@ p:last-child { margin-bottom: 0; }
   html, body { background: #ffffff !important; color: #111111 !important; font-size: 10.5pt; }
   body { background-image: none !important; }
   a { color: #111111 !important; border-bottom: none !important; }
-  h1, h2, h3, h4, .epk-hero-aka-name, .epk-compass-title {
+  h1, h2, h3, h4, .epk-hero-aka-name, .epk-compass-title, .epk-stats dd {
     color: #111111 !important;
     background: none !important;
     -webkit-text-fill-color: #111111;
