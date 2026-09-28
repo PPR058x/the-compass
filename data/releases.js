@@ -3462,7 +3462,7 @@ COMPASS.releases = [
     description: null,
     releaseStrategy: null,
     guideUrl: null,
-    images: { cover: null, coverBackground: null, actBackground: null },
+    images: { cover: { src: "assets/images/releases/albums/echoes-of-tomorrow-2026-album/Echoes%20of%20Tommorow.jpeg", alt: "Echoes of Tomorrow — album cover", width: 1254, height: 1254 }, coverBackground: null, actBackground: null },
     streaming: { spotify: null, appleMusic: null, youtube: null, other: [] },
     pressAssets: [],
     musicVideo: null,
