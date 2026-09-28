@@ -3344,7 +3344,7 @@ COMPASS.releases = [
     description: null,
     releaseStrategy: null,
     guideUrl: null,
-    images: { cover: null, coverBackground: null, actBackground: null },
+    images: { cover: { src: "assets/images/releases/albums/the-awakening-frequency-2025-album/The%20Awakening%20Frequency.jpeg", alt: "The Awakening Frequency — album cover", width: 3000, height: 3000 }, coverBackground: null, actBackground: null },
     streaming: { spotify: null, appleMusic: null, youtube: null, other: [] },
     pressAssets: [],
     musicVideo: null,
