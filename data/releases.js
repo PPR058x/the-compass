@@ -3541,7 +3541,7 @@ COMPASS.releases = [
     description: null,
     releaseStrategy: null,
     guideUrl: null,
-    images: { cover: null, coverBackground: null, actBackground: null },
+    images: { cover: { src: "assets/images/releases/albums/the-truth-beyond-the-veil/Truth%20Beyond%20The%20Veil.jpeg", alt: "The Truth Beyond The Veil — album cover", width: 1254, height: 1254 }, coverBackground: null, actBackground: null },
     streaming: { spotify: null, appleMusic: null, youtube: null, other: [] },
     pressAssets: [],
     musicVideo: null,
