@@ -535,6 +535,9 @@ p:last-child { margin-bottom: 0; }
   text-transform: uppercase;
   color: var(--color-gold-muted);
   margin: 0 0 var(--space-md);
+  max-width: 100%;
+  overflow-wrap: break-word;
+  text-wrap: balance;
 }
 
 .epk-hero-ctas {

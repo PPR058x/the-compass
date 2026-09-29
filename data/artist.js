@@ -15,7 +15,7 @@ COMPASS.artist = {
   name: "Patrick Pascal Reerink",
   aka: "PPR058x",
   brand: "The Compass",
-  genre: "Electronic · Afrobeat · Afro House · Amapiano · Deep House",
+  genre: "Electronic\u00A0· Afrobeat\u00A0· Afro\u00A0House\u00A0· Amapiano\u00A0· Deep\u00A0House\u00A0· Hip-Hop\u00A0· Rap\u00A0· Dutch\u00A0· Reggaeton\u00A0· Latin\u00A0· R&B",
 
   slogans: [
     "The World Is Changing...",
@@ -37,7 +37,7 @@ COMPASS.artist = {
   ],
 
   quickFacts: [
-    { label: "Genre", value: "Electronic · Afrobeat · Afro House · Amapiano · Deep House", pending: false },
+    { label: "Genre", value: "Electronic\u00A0· Afrobeat\u00A0· Afro\u00A0House\u00A0· Amapiano\u00A0· Deep\u00A0House\u00A0· Hip-Hop\u00A0· Rap\u00A0· Dutch\u00A0· Reggaeton\u00A0· Latin\u00A0· R&B", pending: false },
     { label: "Based in", value: "Leeuwarden, Netherlands", pending: false },
     { label: "Active since", value: "2025", pending: false },
     { label: "Current release", value: "The Awakening Code (2 Aug 2026)", pending: false }
