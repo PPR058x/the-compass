@@ -1,0 +1,14 @@
+{
+  "name": "ppr058x-press-kit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Generates the downloadable EPK press kit PDF from the site's data files.",
+  "scripts": {
+    "build": "node build.js",
+    "preview": "node build.js --previews"
+  },
+  "dependencies": {
+    "pdf-lib": "1.17.1",
+    "puppeteer-core": "23.11.1"
+  }
+}

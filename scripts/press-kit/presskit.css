@@ -1,0 +1,230 @@
+/* PDF press kit — tokens mirror epk.css :root. Static font files (same families as the site) so they embed as real fonts. */
+@font-face { font-family: 'Cinzel'; font-weight: 400; font-style: normal; font-display: block; src: url("fonts/cinzel-400-normal.woff") format("woff"); }
+@font-face { font-family: 'Cinzel'; font-weight: 500; font-style: normal; font-display: block; src: url("fonts/cinzel-500-normal.woff") format("woff"); }
+@font-face { font-family: 'Cinzel'; font-weight: 600; font-style: normal; font-display: block; src: url("fonts/cinzel-600-normal.woff") format("woff"); }
+@font-face { font-family: 'EB Garamond'; font-weight: 400; font-style: normal; font-display: block; src: url("fonts/eb-garamond-400-normal.woff") format("woff"); }
+@font-face { font-family: 'EB Garamond'; font-weight: 400; font-style: italic; font-display: block; src: url("fonts/eb-garamond-400-italic.woff") format("woff"); }
+@font-face { font-family: 'EB Garamond'; font-weight: 500; font-style: normal; font-display: block; src: url("fonts/eb-garamond-500-normal.woff") format("woff"); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400; font-style: normal; font-display: block; src: url("fonts/jetbrains-mono-400-normal.woff") format("woff"); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 500; font-style: normal; font-display: block; src: url("fonts/jetbrains-mono-500-normal.woff") format("woff"); }
+:root {
+  --bg: #090909;
+  --bg-deep: #050505;
+  --text: #F3F1EB;
+  --text-dim: #b9b6ac;
+  --text-faint: #8a877e;
+  --gold: #C7A54B;
+  --gold-light: #E3C878;
+  --gold-muted: #8F7A45;
+  --line: rgba(199, 165, 75, 0.38);
+  --line-soft: rgba(199, 165, 75, 0.16);
+  --heading: 'Cinzel', serif;
+  --body: 'EB Garamond', serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 10.5pt;
+  line-height: 1.55;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+p { margin: 0 0 0.8em; }
+a { color: var(--gold); text-decoration: none; }
+dl, dd, ul, ol, figure { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+h1, h2, h3, h4 { font-family: var(--heading); font-weight: 600; margin: 0; letter-spacing: 0.04em; line-height: 1.15; }
+
+/* ---- Page frame ------------------------------------------------------- */
+.page {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  background: radial-gradient(ellipse 120mm 90mm at 85% 0%, rgba(199,165,75,0.07), transparent 70%), var(--bg);
+  break-after: page;
+}
+.page:last-child { break-after: auto; }
+.page-mark {
+  position: absolute; right: -38mm; bottom: -30mm; width: 150mm; height: 150mm;
+  color: var(--gold); opacity: 0.06;
+}
+.run-head, .run-foot {
+  position: absolute; left: 18mm; right: 18mm;
+  display: flex; justify-content: space-between;
+  font-family: var(--mono); font-size: 6.2pt; letter-spacing: 0.26em; text-transform: uppercase;
+  color: var(--gold-muted);
+}
+.run-head { top: 10mm; padding-bottom: 2.6mm; border-bottom: 0.25mm solid var(--line-soft); }
+.run-foot { bottom: 9mm; padding-top: 2.6mm; border-top: 0.25mm solid var(--line-soft); color: var(--text-faint); }
+.run-foot span:last-child { color: var(--gold-muted); }
+.page-compass .page-body { display: flex; flex-direction: column; justify-content: center; }
+.page-body { position: absolute; top: 24mm; bottom: 19mm; left: 18mm; right: 18mm; overflow: hidden; }
+
+.kicker, .label {
+  font-family: var(--mono); font-size: 6.8pt; letter-spacing: 0.26em; text-transform: uppercase;
+  color: var(--gold-muted); margin: 0 0 2.2mm;
+}
+.label { color: var(--gold); letter-spacing: 0.2em; }
+.sec-head { margin-bottom: 8mm; }
+.sec-head h2 { font-size: 25pt; color: var(--text); }
+.head-note { font-family: var(--mono); font-size: 6.6pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-faint); margin: 2.4mm 0 0; }
+.gold-rule { display: block; width: 16mm; height: 0.35mm; margin-top: 4.5mm; background: linear-gradient(90deg, var(--gold), rgba(199,165,75,0)); }
+.subhead {
+  display: flex; align-items: center; gap: 3mm;
+  font-family: var(--mono); font-size: 7pt; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); margin: 0 0 3.5mm;
+}
+.subhead::after { content: ""; flex: 1; height: 0.25mm; background: var(--line-soft); }
+.subhead span { color: var(--text-faint); letter-spacing: 0.14em; }
+.lede { font-size: 13pt; line-height: 1.5; color: var(--text); }
+.card-title {
+  font-family: var(--mono); font-size: 6.8pt; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); margin: 0 0 4mm;
+}
+.motto { font-family: var(--heading); font-size: 11pt; line-height: 1.7; letter-spacing: 0.06em; color: var(--gold-light); margin: 0; }
+.motto strong { font-weight: 500; }
+
+/* ---- 1. Cover --------------------------------------------------------- */
+.cover { background: var(--bg-deep); }
+.cover-photo { position: absolute; top: 0; right: 0; bottom: 0; width: 124mm; }
+.cover-img { width: 100%; height: 100%; object-fit: cover; object-position: 100% 30%; display: block; }
+.cover-shade {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, var(--bg-deep) 0%, var(--bg-deep) 40%, rgba(5,5,5,0.86) 50%, rgba(5,5,5,0.25) 66%, rgba(5,5,5,0) 80%),
+    linear-gradient(0deg, var(--bg-deep) 0%, rgba(5,5,5,0.7) 14%, rgba(5,5,5,0) 32%);
+}
+.cover-content { position: absolute; top: 22mm; left: 18mm; width: 112mm; bottom: 44mm; overflow: hidden; display: flex; flex-direction: column; justify-content: center; }
+.cover-logo { width: 30mm; height: 30mm; display: block; margin-bottom: 16mm; border-radius: 50%; }
+.cover .kicker { font-size: 7.4pt; }
+.cover-aka {
+  font-size: 50pt; letter-spacing: 0.12em; line-height: 1; margin: 3mm 0 3mm; font-weight: 600;
+  color: var(--gold-light);
+}
+.cover-brand { font-family: var(--heading); font-size: 17pt; letter-spacing: 0.34em; text-transform: uppercase; color: var(--text); margin: 0; }
+.cover .gold-rule { width: 22mm; margin: 7mm 0 7mm; }
+.cover-name { font-family: var(--heading); font-size: 12pt; letter-spacing: 0.12em; color: var(--text); margin: 0 0 2mm; }
+.cover-statement { font-size: 12pt; font-style: italic; color: var(--text-dim); max-width: 78mm; margin: 0 0 6mm; }
+.cover-genres { font-family: var(--mono); font-size: 6.8pt; letter-spacing: 0.16em; line-height: 1.9; text-transform: uppercase; color: var(--gold-muted); max-width: 80mm; margin: 0; }
+.cover-foot { position: absolute; left: 18mm; right: 18mm; bottom: 14mm; display: flex; justify-content: space-between; align-items: flex-end; border-top: 0.25mm solid var(--line-soft); padding-top: 5mm; }
+.cover-slogans li { font-style: italic; font-size: 12pt; line-height: 1.6; color: var(--gold-light); }
+.cover-url { font-family: var(--mono); font-size: 6.6pt; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-muted); }
+
+/* ---- 2. Profile ------------------------------------------------------- */
+.profile { display: grid; grid-template-columns: 1fr 58mm; gap: 12mm; }
+.bio p { font-size: 12.2pt; line-height: 1.72; color: var(--text); }
+.bio strong { font-weight: 500; color: var(--gold-light); }
+.bio-name { font-family: var(--heading); font-size: 12pt !important; letter-spacing: 0.08em; margin-bottom: 6mm !important; }
+.bio-name strong { color: var(--text) !important; font-weight: 600 !important; }
+.bio-name em { display: inline-block; margin-top: 1mm; font-family: var(--body); font-size: 11pt; letter-spacing: 0; color: var(--text-dim); }
+.bio-motto { margin-top: 7mm !important; padding-top: 6mm; border-top: 0.25mm solid var(--line-soft); font-family: var(--heading); font-size: 11pt !important; letter-spacing: 0.06em; line-height: 1.8 !important; }
+.facts { border: 0.25mm solid var(--line-soft); border-radius: 1mm; background: rgba(5,5,5,0.6); padding: 6mm 5.5mm; align-self: start; }
+.facts dl > div { padding: 4.2mm 0; border-top: 0.25mm solid var(--line-soft); }
+.facts dl > div:first-child { border-top: 0; padding-top: 0; }
+.facts dt, .contact-card dt, .signature dt, .credits dt {
+  font-family: var(--mono); font-size: 5.9pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.8mm;
+}
+.facts dd { font-size: 11.5pt; line-height: 1.45; }
+.facts-sig { margin-top: 6mm; padding-top: 5mm; border-top: 0.25mm solid var(--line); }
+.facts-sig span { display: block; font-style: italic; font-size: 10pt; color: var(--text-dim); }
+.facts-sig strong { font-family: var(--heading); font-weight: 600; font-size: 17pt; letter-spacing: 0.18em; color: var(--gold-light); }
+
+/* ---- 3. Musical identity ---------------------------------------------- */
+.genre-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 0.25mm solid var(--line-soft); border-left: 0.25mm solid var(--line-soft); margin-bottom: 11mm; }
+.genre-grid li {
+  border-right: 0.25mm solid var(--line-soft); border-bottom: 0.25mm solid var(--line-soft);
+  padding: 5mm 3mm; text-align: center;
+  font-family: var(--heading); font-size: 10.5pt; letter-spacing: 0.1em; color: var(--text);
+}
+.genre-grid li:nth-child(4n+1) { color: var(--gold-light); }
+.identity-quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8mm; margin-bottom: 12mm; }
+.identity-quotes > div { border-top: 0.35mm solid var(--line); padding-top: 4mm; }
+.identity-quotes p:not(.label) { font-size: 11pt; line-height: 1.6; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 0.25mm solid var(--line-soft); border-bottom: 0.25mm solid var(--line-soft); }
+.stats > div { padding: 7mm 3mm; text-align: center; border-left: 0.25mm solid var(--line-soft); display: flex; flex-direction: column-reverse; }
+.stats > div:first-child { border-left: 0; }
+.stats dd { white-space: nowrap; font-family: var(--heading); font-size: 22pt; font-weight: 600; color: var(--gold-light); line-height: 1.1; }
+.stats dt { font-family: var(--mono); font-size: 6pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-faint); margin-top: 2mm; }
+
+/* ---- 4. The Compass --------------------------------------------------- */
+.compass { display: grid; grid-template-columns: 72mm 1fr; gap: 12mm; align-items: center; margin-top: 4mm; }
+.compass-emblem { position: relative; }
+.compass-emblem::before { content: ""; position: absolute; inset: -12mm; background: radial-gradient(circle, rgba(199,165,75,0.16), transparent 62%); }
+.compass-logo { position: relative; width: 72mm; height: 72mm; border-radius: 50%; display: block; }
+.compass-text .sec-head h2 { font-size: 30pt; color: var(--gold-light); }
+.compass-copy { font-size: 11pt; line-height: 1.62; color: var(--text-dim); }
+.compass-copy strong { color: var(--text); font-weight: 500; }
+.signature { display: grid; grid-template-columns: auto 1fr; gap: 2.4mm 6mm; align-items: baseline; margin-top: 6mm; padding-top: 5mm; border-top: 0.25mm solid var(--line-soft); }
+.signature dt { margin: 0; }
+.signature dd { font-family: var(--heading); font-size: 11pt; letter-spacing: 0.08em; }
+.compass-close { margin-top: 16mm; display: grid; grid-template-columns: 1fr 1fr; gap: 12mm; border-top: 0.25mm solid var(--line-soft); border-bottom: 0.25mm solid var(--line-soft); padding: 11mm 0; }
+.slogans li { font-style: italic; font-size: 15pt; line-height: 1.7; color: var(--gold-light); }
+.compass-close .motto { font-size: 12pt; border-left: 0.35mm solid var(--line); padding-left: 10mm; align-self: center; }
+
+/* ---- 5. The Awakening Code -------------------------------------------- */
+.tac { display: grid; grid-template-columns: 66mm 1fr; gap: 9mm; margin-bottom: 7mm; }
+.tac-cover { width: 66mm; height: 66mm; display: block; border: 0.25mm solid var(--line-soft); box-shadow: 0 0 14mm rgba(199,165,75,0.12); }
+.tac-meta { font-family: var(--mono); font-size: 6.8pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 4mm; }
+.tac-copy { font-size: 11pt; line-height: 1.55; color: var(--text); }
+.credits { display: grid; grid-template-columns: auto 1fr; gap: 1.6mm 5mm; align-items: baseline; }
+.credits dt { margin: 0; white-space: nowrap; }
+.credits dd { font-size: 9.6pt; line-height: 1.4; color: var(--text-dim); }
+.credits--album { margin-top: 5mm; padding-top: 4mm; border-top: 0.25mm solid var(--line-soft); }
+.credits--album dd { color: var(--text); }
+.tracks { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-flow: column; grid-template-rows: repeat(7, auto); gap: 0 7mm; margin-bottom: 7mm; }
+.tracks li { display: flex; gap: 3mm; padding: 1.2mm 0; border-bottom: 0.25mm solid var(--line-soft); font-size: 9.6pt; line-height: 1.3; }
+.tn { font-family: var(--mono); font-size: 6.6pt; color: var(--gold-muted); padding-top: 0.6mm; }
+.credit-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5mm 8mm; }
+.credit-groups h4 { font-family: var(--mono); font-weight: 500; font-size: 6.2pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-muted); margin-bottom: 2mm; }
+.credit-groups .credits { grid-template-columns: 1fr; gap: 0.4mm; }
+.credit-groups .credits dd { margin-bottom: 1.6mm; font-size: 9.2pt; }
+.credit-groups .credits dt { white-space: normal; }
+
+/* ---- 6. Selected releases --------------------------------------------- */
+.album-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 7mm 4.5mm; }
+.album-cover { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; border: 0.25mm solid var(--line-soft); margin-bottom: 2.6mm; }
+.album-info { font-family: var(--mono); font-size: 5.4pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-muted); margin: 0 0 1mm; }
+.album-title { font-size: 8.6pt; letter-spacing: 0.03em; line-height: 1.25; margin-bottom: 1mm; }
+.album-count { font-size: 8.6pt; font-style: italic; color: var(--text-faint); margin: 0; }
+.discography { grid-column: span 2; border: 0.25mm solid var(--line); border-radius: 1mm; padding: 6mm; background: rgba(199,165,75,0.04); display: flex; flex-direction: column; justify-content: center; }
+.disco-count { font-family: var(--heading); font-size: 20pt; font-weight: 600; color: var(--gold-light); margin: 0 0 2mm; }
+.disco-copy { font-size: 10pt; color: var(--text-dim); margin-bottom: 3mm; }
+.disco-link { font-family: var(--mono); font-size: 6.6pt; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* ---- 7. Visual identity ----------------------------------------------- */
+.visual { display: grid; grid-template-columns: 78mm 1fr; gap: 12mm; }
+.vis-photo { width: 78mm; height: 138.6mm; object-fit: cover; display: block; border: 0.25mm solid var(--line-soft); }
+figcaption { font-family: var(--mono); font-size: 5.8pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-faint); margin-top: 2.6mm; }
+.visual-side { display: flex; flex-direction: column; gap: 10mm; }
+.vis-logo { width: 52mm; height: 52mm; display: block; border-radius: 50%; }
+.swatches { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+.swatch { border: 0.25mm solid var(--line-soft); border-radius: 1mm; overflow: hidden; }
+.chip { display: block; height: 16mm; border-bottom: 0.25mm solid var(--line-soft); }
+.sw-name { display: block; font-family: var(--heading); font-size: 9pt; letter-spacing: 0.06em; padding: 2.6mm 3mm 0.6mm; }
+.swatch code { display: block; font-family: var(--mono); font-size: 6.4pt; letter-spacing: 0.12em; color: var(--text-faint); padding: 0 3mm 2.6mm; }
+.visual-motif { display: grid; grid-template-columns: 26mm 1fr; gap: 6mm; align-items: center; border-top: 0.25mm solid var(--line-soft); padding-top: 7mm; }
+.motif-large { width: 26mm; height: 26mm; color: var(--gold); }
+.motif-copy { font-size: 10.5pt; color: var(--text-dim); margin: 0; }
+
+/* ---- 8. Booking & contact --------------------------------------------- */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin: 7mm 0 6mm; }
+.contact-card { border: 0.25mm solid var(--line-soft); border-radius: 1mm; padding: 6mm; background: rgba(5,5,5,0.6); }
+.contact-card dl { display: grid; grid-template-columns: 1fr; }
+.contact-card dt { margin-top: 3.2mm; }
+.contact-card dt:first-child { margin-top: 0; }
+.contact-card dd { font-size: 11pt; line-height: 1.45; }
+.rider { margin-bottom: 9mm; }
+.rider p { font-size: 11pt; font-style: italic; color: var(--text-dim); margin: 0; }
+.links li { display: flex; justify-content: space-between; align-items: baseline; gap: 6mm; padding: 3.2mm 0; border-bottom: 0.25mm solid var(--line-soft); }
+.link-label { font-family: var(--heading); font-size: 10pt; letter-spacing: 0.05em; }
+.links a { font-family: var(--mono); font-size: 7pt; letter-spacing: 0.06em; }
+.closing { display: flex; align-items: center; gap: 8mm; margin-top: 10mm; }
+.closing-logo { width: 24mm; height: 24mm; border-radius: 50%; }
+.artwork-row { margin-top: 9mm; }
+.artwork-strip { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 3mm; }
+.strip-cover { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; border: 0.25mm solid var(--line-soft); }
