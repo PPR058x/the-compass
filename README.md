@@ -75,7 +75,7 @@ Alongside the *Awakening Code* campaign above, this repo also holds the foundati
 
 - `agents/` — specialized AI agent definitions
 - `knowledge/` — shared knowledge base agents draw on
-- `prompts/` — reusable agent prompt templates *(distinct from `Prompts/` above, which holds creative-asset generation prompts)*
+- `agent-prompts/` — reusable agent prompt templates *(distinct from `Prompts/` above, which holds creative-asset generation prompts)*
 - `workflows/` — multi-step pipelines that chain agents together
 - `memory/` — persistent agent memory/state
 - `marketing/` — studio-wide, agent-driven marketing infrastructure for future releases *(distinct from the campaign-specific marketing content above)*

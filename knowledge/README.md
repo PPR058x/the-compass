@@ -11,7 +11,7 @@ This is distinct from the *Awakening Code*-specific campaign docs at the repo ro
   - `The Awakening Code/` — the current, confirmed release.
   - `Dakila Vibes/` — a future album; name only, no details confirmed yet.
 - **`branding/`** — reference notes on brand identity (palettes, typography, motifs, tone), distinct from the top-level `branding/` infrastructure folder.
-- **`prompts/`** — reference notes on prompt conventions/patterns, distinct from the top-level `prompts/` (runnable agent prompt templates) and root `Prompts/` (creative-asset generation prompts).
+- **`prompts/`** — reference notes on prompt conventions/patterns, distinct from the top-level `agent-prompts/` (runnable agent prompt templates) and root `Prompts/` (creative-asset generation prompts).
 - **`releases/`** — reusable release-strategy knowledge, distinct from `RELEASE_PLAN.md` (this campaign's specific plan).
 - **`social/`** — reference knowledge on platform conventions, distinct from `marketing/` and the existing per-platform content folders.
 - **`workflows/`** — knowledge behind how pipelines are designed, distinct from the top-level `workflows/` (the runnable pipelines themselves).

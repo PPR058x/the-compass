@@ -22,16 +22,16 @@ Where a new folder's name or purpose overlaps with something that already exists
 The folders are designed to fit together as a loop an agent-based system runs repeatedly:
 
 ```
-knowledge/  ──┐
-              ├──►  agents/  ──►  workflows/  ──►  output (music/, marketing/, branding/, ...)
-prompts/   ──┘                        │
-                                       ▼
-                                   memory/
+knowledge/      ──┐
+                  ├──►  agents/  ──►  workflows/  ──►  output (music/, marketing/, branding/, ...)
+agent-prompts/  ──┘                       │
+                                           ▼
+                                       memory/
 ```
 
 - **`agents/`** — Defines each specialized agent: its role, inputs, outputs, and permissions. This is the registry of "who" does the work.
 - **`knowledge/`** — Shared reference material agents draw on: facts, glossaries, domain context that isn't specific to one agent or one release.
-- **`prompts/`** — Reusable system/task prompt templates that instruct agents how to behave for a given job.
+- **`agent-prompts/`** — Reusable system/task prompt templates that instruct agents how to behave for a given job.
 - **`workflows/`** — Orchestration: chains multiple agents together into a pipeline toward a larger outcome (e.g. taking a song from draft to a released, marketed asset).
 - **`memory/`** — Where agents persist state, decisions, and session history, so subsequent runs have continuity instead of starting cold.
 - **`music/`, `marketing/`, `branding/`** — Where the studio's actual creative output lands, organized by domain, separate from any one release's campaign material.
@@ -42,9 +42,9 @@ prompts/   ──┘                        │
 
 ## Status
 
-- [x] Folder scaffold created (`agents/`, `knowledge/`, `prompts/`, `workflows/`, `memory/`, `docs/`, `marketing/`, `music/`, `branding/`, `automation/`, `scripts/`, `tests/`)
+- [x] Folder scaffold created (`agents/`, `knowledge/`, `agent-prompts/`, `workflows/`, `memory/`, `docs/`, `marketing/`, `music/`, `branding/`, `automation/`, `scripts/`, `tests/`)
 - [x] First agent defined in `agents/` — the [CEO Agent](../agents/ceo/README.md), orchestrator for the whole system
-- [ ] First prompt templates in `prompts/`
+- [ ] First prompt templates in `agent-prompts/`
 - [ ] First workflow in `workflows/`
 - [ ] Automation/scheduling wired up in `automation/`
 
