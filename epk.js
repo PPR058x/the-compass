@@ -605,15 +605,15 @@
     var bookingDl = byId("contact-booking-dl");
     if (bookingDl) {
       bookingDl.innerHTML =
-        "<dt>Contact name</dt><dd>" + contactField(bk.name, "name") + "</dd>" +
-        "<dt>Email</dt><dd>" + emailField(bk.email, "email") + "</dd>";
+        "<dt>Name</dt><dd>" + contactField(bk.name, "name") + "</dd>" +
+        "<dt>Contact</dt><dd>" + (bk.email ? emailField(bk.email, "email") : contactField(bk.contact, "email")) + "</dd>";
     }
     var pressDl = byId("contact-press-dl");
     if (pressDl) {
       pressDl.innerHTML =
-        "<dt>Contact name</dt><dd>" + contactField(pm.name, "name") + "</dd>" +
+        "<dt>Name</dt><dd>" + contactField(pm.name, "name") + "</dd>" +
         "<dt>Role</dt><dd>" + contactField(pm.role, "role") + "</dd>" +
-        "<dt>Email</dt><dd>" + emailField(pm.email, "email") + "</dd>" +
+        "<dt>Contact</dt><dd>" + (pm.email ? emailField(pm.email, "email") : contactField(pm.contact, "email")) + "</dd>" +
         "<dt>Phone</dt><dd>" + contactField(pm.phone, "phone (optional)") + "</dd>";
     }
 

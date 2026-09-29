@@ -23,8 +23,19 @@ COMPASS.press = {
   // string/HTML once a technical rider exists, else null.
   rider: null,
 
+  // `contact` is free-text shown when there is no public `email` address.
   contacts: {
-    pressMedia: { name: null, role: null, email: null, phone: null },
-    booking: { name: null, email: null }
+    pressMedia: {
+      name: "Patrick Pascal Reerink",
+      role: "Artist / Founder — The Compass",
+      email: null,
+      contact: "Contact via email — available through Linktree",
+      phone: "Private"
+    },
+    booking: {
+      name: "Patrick Pascal Reerink",
+      email: null,
+      contact: "Contact via email — available through Linktree"
+    }
   }
 };
