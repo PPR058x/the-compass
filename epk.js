@@ -677,11 +677,22 @@
     }
   }
 
-  // "Download Press Kit" — print-to-PDF of this page, as before. Forces all
-  // reveal-on-scroll sections visible so nothing prints blank.
+  // "Download Press Kit" — downloads the PDF press kit named in the button's
+  // data-href (falls back to print-to-PDF of this page if none is set).
+  // beforeprint forces all reveal-on-scroll sections visible so nothing
+  // prints blank.
   function initPrint() {
     document.querySelectorAll('[data-action="download-kit"]').forEach(function (btn) {
-      btn.addEventListener("click", function () { window.print(); });
+      btn.addEventListener("click", function () {
+        var href = btn.getAttribute("data-href");
+        if (!href) { window.print(); return; }
+        var link = document.createElement("a");
+        link.href = href;
+        link.download = href.split("/").pop();
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+      });
     });
     window.addEventListener("beforeprint", function () {
       document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("is-visible"); });
